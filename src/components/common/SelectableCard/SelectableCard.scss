@@ -1,0 +1,73 @@
+.selectablecard {
+    text-align: center;
+    padding-bottom: 14px;
+    padding-top: 14px;
+
+    height: 100%;
+
+    background: #ffffff;
+    box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.1);
+
+    cursor: pointer;
+}
+
+.selectablecard__image {
+    max-width: 80%;
+    margin-bottom: 6px;
+}
+
+.selectablecard__title {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.selectablecard__description {
+    font-size: 0.9em;
+}
+
+.selectablecard__title,
+.selectablecard__description {
+    display: inline-block;
+    width: 100%;
+    padding: 0 20px;
+    user-select: none;
+}
+
+
+// ---
+// States
+// ---
+.selectablecard.is-selected {
+    background: linear-gradient(to bottom, #61C4EB, #0D85D1);
+}
+
+.selectablecard.is-valid {
+    background: linear-gradient(to bottom, #75cc8e, #35854e);
+}
+
+.selectablecard.is-invalid {
+    background: linear-gradient(to bottom, #c76166, #b6272e);
+}
+
+
+.selectablecard:hover,
+.selectablecard[class*="is-"] {
+    box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.2);
+}
+
+.selectablecard[class*="is-"] > .selectablecard__title,
+.selectablecard[class*="is-"] > .selectablecard__description {
+    color: #ffffff;
+}
+
+
+.selectablecard.is-disabled {
+    opacity: 0.5;
+    box-shadow: none;
+    cursor: not-allowed;
+
+    .selectablecard__title,
+    .selectablecard__description {
+        color: inherit;
+    }
+}
