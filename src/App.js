@@ -1,25 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import LayoutHeader from './layouts/Header/LayoutHeader';
+import LayoutBody from './layouts/Body';
+import LayoutSection from './layouts/Section';
+import AppHeader from './components/common/AppHeader';
+import FormationSelect from './components/FormationSelect';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+
+      <LayoutHeader>
+        <AppHeader />
+      </LayoutHeader>
+
+      <LayoutBody>
+        <LayoutSection>
+          <FormationSelect />
+        </LayoutSection>
+        <LayoutSection>
+          
+        </LayoutSection>
+      </LayoutBody>
+
+    </React.Fragment>
   );
 }
 

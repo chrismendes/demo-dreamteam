@@ -1,0 +1,33 @@
+.optionselector {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul.optionselector__images {
+    margin: 0 60px 0 0;
+    padding: 0;
+    list-style: none;
+}
+ul.optionselector__images > li {
+    display: none;
+}
+ul.optionselector__images > li.is-active {
+    display: block;
+}
+
+.optionselector__controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 260px;
+}
+
+.optionselector__controls > .optionselector__button {
+    margin: 20px 0 24px 0;
+}
+
+.optionselector__selection {
+    font-size: 1.6em;
+    font-weight: bold;
+}

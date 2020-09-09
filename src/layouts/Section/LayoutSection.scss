@@ -1,0 +1,8 @@
+.l-section {
+    padding: 60px 30px;
+    background: #ffffff;
+}
+
+.l-section:nth-child(even) {
+    background: #efefef;
+}
