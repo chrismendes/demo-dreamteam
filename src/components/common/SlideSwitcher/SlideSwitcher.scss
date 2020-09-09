@@ -1,33 +1,33 @@
-.optionselector {
+.slideswitcher {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-ul.optionselector__images {
+ul.slideswitcher__images {
     margin: 0 60px 0 0;
     padding: 0;
     list-style: none;
 }
-ul.optionselector__images > li {
+ul.slideswitcher__images > li {
     display: none;
 }
-ul.optionselector__images > li.is-active {
+ul.slideswitcher__images > li.is-active {
     display: block;
 }
 
-.optionselector__controls {
+.slideswitcher__controls {
     display: flex;
     flex-direction: column;
     align-items: center;
     min-width: 260px;
 }
 
-.optionselector__controls > .optionselector__button {
+.slideswitcher__controls > .slideswitcher__button {
     margin: 20px 0 24px 0;
 }
 
-.optionselector__selection {
+.slideswitcher__selection {
     font-size: 1.6em;
     font-weight: bold;
 }
