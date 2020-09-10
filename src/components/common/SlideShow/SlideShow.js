@@ -5,7 +5,7 @@ const SlideShow = (props) => {
 
   const slides = props.slides;
   const buttonLabel = (props.button) ? props.button : 'Next Slide';
-  const updateGlobalState = props.update;
+  const updateAppState = props.update;
   const [activeSlide, setActiveSlide] = useState(0);
 
   const changeSlide = () => {
@@ -14,7 +14,7 @@ const SlideShow = (props) => {
     } else {
       setActiveSlide(0);
     }
-    if(updateGlobalState) updateGlobalState(slides[activeSlide]);
+    if(updateAppState) updateAppState(slides[activeSlide]);
   };
 
 
