@@ -3,7 +3,7 @@ import image442 from './img/442.png';
 import image442d from './img/442d.png';
 import image541 from './img/541.png';
 import image352 from './img/352.png';
-import SlideSwitcher from '../common/SlideSwitcher';
+import SlideShow from '../common/SlideShow';
 import './FormationSelect.scss';
 
 const formations = [
@@ -17,7 +17,7 @@ const FormationSelect = () => {
   const [selection, setSelection] = useState(0);
 
   return (
-    <SlideSwitcher options={formations} button="Change Formation" state={selection} updateState={setSelection} />
+    <SlideShow options={formations} button="Change Formation" state={selection} updateState={setSelection} />
   );
 };
 

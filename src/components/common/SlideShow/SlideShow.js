@@ -1,7 +1,7 @@
 import React from 'react';
-import './SlideSwitcher.scss';
+import './SlideShow.scss';
 
-const SlideSwitcher = (props) => {
+const SlideShow = (props) => {
 
   const options = props.options;
   const buttonLabel = (props.button) ? props.button : 'Next Slide';
@@ -25,31 +25,31 @@ const SlideSwitcher = (props) => {
     </li>
   );
   const optionImages = (
-    <ul className="slideswitcher__images">
+    <ul className="slideshow__images">
       {optionImagesListItems}
     </ul>
   );
   const dots = () => {
     return Array.from(Array(options.length), (_, i) => 
       <li className={i === slide ? 'is-active': '' } key={i}>
-        <span className="slideswitcher__dotoff material-icons">radio_button_unchecked</span>
-        <span className="slideswitcher__doton material-icons">check_circle</span>
+        <span className="slideshow__dotoff material-icons">radio_button_unchecked</span>
+        <span className="slideshow__doton material-icons">check_circle</span>
       </li>
     );
   };
 
 
   if(slidesValid() === false) {
-    console.error('Option data for SlideSwitcher missing mandatory properties.');
+    console.error('Option data for SlideShow missing mandatory properties.');
     return <span>False</span>;
   }
   return (
-    <div className="slideswitcher" data-testid="SlideSwitcher">
+    <div className="slideshow" data-testid="SlideShow">
       {optionImages}
-      <div className="slideswitcher__controls">
-        <span className="slideswitcher__selection">{options[slide].title}</span>
-        <button onClick={changeSlide} className="slideswitcher__button">{buttonLabel}</button>
-        <ul className="slideswitcher__dots">
+      <div className="slideshow__controls">
+        <span className="slideshow__selection">{options[slide].title}</span>
+        <button onClick={changeSlide} className="slideshow__button">{buttonLabel}</button>
+        <ul className="slideshow__dots">
           {dots()}
         </ul>
       </div>
@@ -58,4 +58,4 @@ const SlideSwitcher = (props) => {
 
 };
 
-export default SlideSwitcher;
+export default SlideShow;
