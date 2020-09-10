@@ -1,11 +1,15 @@
 import React from 'react';
+// import React, { useContext } from 'react';
 import TodoTabs from '../common/TodoTabs';
 import SelectableCard from '../common/SelectableCard';
+// import { UserFormationContext } from '../../context/UserContext';
 import playerData from '../../data/players.json';
 import './PlayerCatalogue.scss';
 
 const PlayerCatalogue = () => {
 
+  // const userFormation = useContext(UserFormationContext);
+// console.log(userFormation);
   const selectPlayer = () => {
 
   };
