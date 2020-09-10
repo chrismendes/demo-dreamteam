@@ -31,3 +31,31 @@ ul.slideswitcher__images > li.is-active {
     font-size: 1.6em;
     font-weight: bold;
 }
+
+// ---
+// Dots
+// ---
+.slideswitcher__dots {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.slideswitcher__dots > li {
+    display: inline-block;
+}
+
+.slideswitcher__dotoff {
+    color: #c0c0c0;
+}
+.slideswitcher__doton {
+    color: #2d965a;
+}
+
+li > .slideswitcher__doton,
+li.is-active > .slideswitcher__dotoff {
+    display: none;
+}
+li.is-active > .slideswitcher__doton {
+    display: inline;
+}
