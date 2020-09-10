@@ -2,13 +2,13 @@ import React, { useState, useContext } from 'react';
 import TodoTabs from '../common/TodoTabs';
 import SelectableCard from '../common/SelectableCard';
 import UserTeamContext from '../../context/UserContext';
-import playerList from '../../data/players.json';
-import './PlayerCatalogue.scss';
+import playerCatalogue from '../../data/players.json';
+import './PlayerSelector.scss';
 
-const PlayerCatalogue = () => {
+const PlayerSelector = () => {
 
   const getPlayersByPosition = (position) => {
-    return playerList.filter(player => player.position === position);
+    return playerCatalogue.filter(player => player.position === position);
   };
 
   const [activeCategory, setActiveCategory] = useState('GK');
@@ -26,7 +26,7 @@ const PlayerCatalogue = () => {
   };
 
   return (
-    <div className="playercatalogue" data-testid="PlayerCatalogue">
+    <div className="playerselector" data-testid="PlayerSelector">
 
       <TodoTabs tabs={[
         { id: 'GK',  label: 'Goalkeepers' },
@@ -49,4 +49,4 @@ const PlayerCatalogue = () => {
   );
 };
 
-export default PlayerCatalogue;
+export default PlayerSelector;

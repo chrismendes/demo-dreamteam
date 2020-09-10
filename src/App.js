@@ -7,7 +7,7 @@ import LayoutContainer from './layouts/Container';
 
 import AppHeader from './components/common/AppHeader';
 import FormationSelector from './components/FormationSelector';
-import PlayerCatalogue from './components/PlayerCatalogue';
+import PlayerSelector from './components/PlayerSelector';
 
 import UserTeamContext from './context/UserContext';
 import formations from './data/formations';
@@ -45,7 +45,7 @@ const App = () => {
           <LayoutSection>
             <LayoutContainer>
 
-              <PlayerCatalogue />
+              <PlayerSelector />
 
             </LayoutContainer>
           </LayoutSection>
