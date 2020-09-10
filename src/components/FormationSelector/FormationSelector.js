@@ -4,7 +4,7 @@ import image442d from './img/442d.png';
 import image541 from './img/541.png';
 import image352 from './img/352.png';
 import SlideShow from '../common/SlideShow';
-import './FormationSelect.scss';
+import './FormationSelector.scss';
 
 const formations = [
   { id: '442',  title: '4-4-2', image: image442 },
@@ -13,7 +13,7 @@ const formations = [
   { id: '352',  title: '3-5-2', image: image352 }
 ];
 
-const FormationSelect = () => {
+const FormationSelector = () => {
   const [selection, setSelection] = useState(0);
 
   return (
@@ -21,4 +21,4 @@ const FormationSelect = () => {
   );
 };
 
-export default FormationSelect;
+export default FormationSelector;

@@ -4,7 +4,7 @@ import LayoutBody from './layouts/Body';
 import LayoutSection from './layouts/Section';
 import LayoutContainer from './layouts/Container';
 import AppHeader from './components/common/AppHeader';
-import FormationSelect from './components/FormationSelect';
+import FormationSelector from './components/FormationSelector';
 import PlayerCatalogue from './components/PlayerCatalogue';
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
         <LayoutSection>
           <LayoutContainer>
 
-            <FormationSelect />
+            <FormationSelector />
 
           </LayoutContainer>
         </LayoutSection>
