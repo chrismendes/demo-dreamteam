@@ -7,22 +7,26 @@ const formations = [
     {
         "id": "442",
         "title": "4-4-2",
-        "image": image442
+        "image": image442,
+        "places": [1,4,4,2]
     },
     {
         "id": "442d",
         "title": "4-4-2 (Diamond)",
-        "image": image442d
+        "image": image442d,
+        "places": [1,4,4,2]
     },
     {
         "id": "541",
         "title": "5-4-1",
-        "image": image541
+        "image": image541,
+        "places": [1,5,4,1]
     },
     {
         "id": "352",
         "title": "3-5-2",
-        "image": image352
+        "image": image352,
+        "places": [1,3,5,2]
      }
 ];
 

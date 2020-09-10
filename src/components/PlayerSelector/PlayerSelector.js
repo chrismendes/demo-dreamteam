@@ -29,10 +29,10 @@ const PlayerSelector = () => {
     <div className="playerselector" data-testid="PlayerSelector">
 
       <TodoTabs tabs={[
-        { id: 'GK',  label: 'Goalkeepers' },
-        { id: 'DEF', label: 'Defenders' },
-        { id: 'MID', label: 'Midfielders' },
-        { id: 'FWD', label: 'Forwards' }
+        { id: 'GK',  label: `Goalkeepers (0/${userTeamState.formation.places[0]})` },
+        { id: 'DEF', label: `Defenders (0/${userTeamState.formation.places[1]})` },
+        { id: 'MID', label: `Midfielders (0/${userTeamState.formation.places[2]})` },
+        { id: 'FWD', label: `Forwards (0/${userTeamState.formation.places[3]})` },
       ]} updateFn={changeCategory} />
 
       <div className="flex two three-600 six-1200">

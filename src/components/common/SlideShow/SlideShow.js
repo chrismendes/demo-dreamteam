@@ -9,12 +9,10 @@ const SlideShow = (props) => {
   const [activeSlide, setActiveSlide] = useState(0);
 
   const changeSlide = () => {
-    if (activeSlide < slides.length-1) {
-      setActiveSlide(activeSlide + 1);
-    } else {
-      setActiveSlide(0);
-    }
-    if(updateAppState) updateAppState(slides[activeSlide]);
+    let nextSlide = activeSlide + 1;
+    if (activeSlide >= slides.length-1) nextSlide = 0;
+    setActiveSlide(nextSlide);
+    if(updateAppState) updateAppState(slides[nextSlide]);
   };
 
 
