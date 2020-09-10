@@ -7,11 +7,14 @@ const SelectableCard = (props) => {
   // const [isDisabled, setDisabled] = useState(false);
   // const [isValidated, setValidated] = useState(false);
   // const [isInvalidated, setInvalidated] = useState(false);
+  const updateAppState = props.updateFn;
 
   const toggleSelection = () => {
+console.log(props.id);
     setSelected(!isSelected);
+    if(updateAppState) updateAppState(props.id);
   };
-  
+
   return (
     <article onClick={toggleSelection} className={`selectablecard ${isSelected ? "is-selected" : ""}`}>
       <img className="selectablecard__image" src={props.image} alt="" />
