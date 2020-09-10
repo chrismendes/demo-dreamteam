@@ -14,7 +14,7 @@ const FormationSelector = () => {
   };
   
   return (
-    <SlideShow options={formations} button="Change Formation" update={changeFormation} />
+    <SlideShow slides={formations} button="Change Formation" update={changeFormation} />
   );
 };
 
