@@ -1,0 +1,45 @@
+.todotabs {
+    margin: 0 0 40px 0;
+    padding: 0;
+    list-style: none;
+
+    display: flex;
+    justify-content: center;
+}
+
+.todotabs > li {
+    padding: 20px 30px;
+    border-bottom: 2px solid #c0c0c0;
+
+    user-select: none;
+    cursor: pointer;
+
+    font-size: 0.9em;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    display: flex;
+    align-items: center;
+}
+
+.todotabs > li > [class*="tabs__checkbox"] {
+    margin-right: 8px;
+}
+
+.todotabs > li.is-active {
+    color: #0074d9;
+    border-bottom-color: #0074d9;
+
+    cursor: default;
+}
+
+.todotabs > li > .todotabs__checkboxon,
+.todotabs > li.is-complete > .todotabs__checkboxoff {
+    display: none;
+}
+.todotabs > li.is-complete > .todotabs__checkboxon {
+    display: block;
+}
+.todotabs > li.is-complete:not(.is-active) {
+    color: #35854e;
+}
