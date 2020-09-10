@@ -5,7 +5,7 @@ import LayoutSection from './layouts/Section';
 import LayoutContainer from './layouts/Container';
 import AppHeader from './components/common/AppHeader';
 import FormationSelect from './components/FormationSelect';
-import PlayerSelector from './components/PlayerSelector';
+import PlayerCatalogue from './components/PlayerCatalogue';
 
 function App() {
   return (
@@ -26,7 +26,7 @@ function App() {
         <LayoutSection>
           <LayoutContainer>
 
-            <PlayerSelector />
+            <PlayerCatalogue />
 
           </LayoutContainer>
         </LayoutSection>

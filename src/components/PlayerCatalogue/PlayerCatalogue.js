@@ -2,16 +2,16 @@ import React from 'react';
 import TodoTabs from '../common/TodoTabs';
 import SelectableCard from '../common/SelectableCard';
 import playerData from '../../data/players.json';
-import './PlayerSelector.scss';
+import './PlayerCatalogue.scss';
 
-const PlayerSelector = () => {
+const PlayerCatalogue = () => {
 
   const selectPlayer = () => {
 
   };
 
   return (
-    <div className="playerselector" data-testid="PlayerSelector">
+    <div className="playercatalogue" data-testid="PlayerCatalogue">
 
       <TodoTabs tabs={["Goalkeepers", "Defenders", "Midfielders", "Forwards"]} />
 
@@ -29,4 +29,4 @@ const PlayerSelector = () => {
   );
 };
 
-export default PlayerSelector;
+export default PlayerCatalogue;
