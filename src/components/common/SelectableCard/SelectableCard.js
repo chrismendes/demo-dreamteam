@@ -10,7 +10,6 @@ const SelectableCard = (props) => {
   const updateAppState = props.updateFn;
 
   const toggleSelection = () => {
-console.log(props.id);
     setSelected(!isSelected);
     if(updateAppState) updateAppState(props.id);
   };
