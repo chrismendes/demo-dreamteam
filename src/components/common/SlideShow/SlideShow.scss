@@ -4,6 +4,7 @@
     align-items: center;
 }
 
+
 ul.slideshow__images {
     margin: 0 60px 0 0;
     padding: 0;
@@ -16,6 +17,13 @@ ul.slideshow__images > li.is-active {
     display: block;
 }
 
+
+.slideshow__title {
+    font-size: 1.6em;
+    font-weight: bold;
+}
+
+
 .slideshow__controls {
     display: flex;
     flex-direction: column;
@@ -27,14 +35,7 @@ ul.slideshow__images > li.is-active {
     margin: 20px 0 24px 0;
 }
 
-.slideshow__selection {
-    font-size: 1.6em;
-    font-weight: bold;
-}
 
-// ---
-// Dots
-// ---
 .slideshow__dots {
     margin: 0;
     padding: 0;

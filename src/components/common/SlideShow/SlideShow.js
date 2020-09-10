@@ -47,7 +47,7 @@ const SlideShow = (props) => {
     <div className="slideshow" data-testid="SlideShow">
       {optionImages}
       <div className="slideshow__controls">
-        <span className="slideshow__selection">{options[slide].title}</span>
+        <span className="slideshow__title">{options[slide].title}</span>
         <button onClick={changeSlide} className="slideshow__button">{buttonLabel}</button>
         <ul className="slideshow__dots">
           {dots()}
