@@ -8,25 +8,25 @@ const formations = [
         "id": "442",
         "title": "4-4-2",
         "image": image442,
-        "places": [1,4,4,2]
+        "places": { 'GK': 1, 'DEF': 4, 'MID': 4, 'FWD': 2 }
     },
     {
         "id": "442d",
         "title": "4-4-2 (Diamond)",
         "image": image442d,
-        "places": [1,4,4,2]
+        "places": { 'GK': 1, 'DEF': 4, 'MID': 4, 'FWD': 2 }
     },
     {
         "id": "541",
         "title": "5-4-1",
         "image": image541,
-        "places": [1,5,4,1]
+        "places": { 'GK': 1, 'DEF': 5, 'MID': 4, 'FWD': 1 }
     },
     {
         "id": "352",
         "title": "3-5-2",
         "image": image352,
-        "places": [1,3,5,2]
+        "places": { 'GK': 1, 'DEF': 3, 'MID': 5, 'FWD': 2 }
      }
 ];
 

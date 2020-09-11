@@ -18,6 +18,9 @@ const PlayerSelector = () => {
   const [activeCategoryPlayers, setActiveCategoryPlayers] = useState(getPlayersByPosition(activeCategory));
   const [userTeamSelection, setUserTeamSelection] = useContext(UserTeamContext);
 
+  const ERROR = -1, INCOMPLETE = 0, COMPLETED = 1;
+  const [categoryStatus, setCategoryStatus] = useState({ 'GK': INCOMPLETE, 'DEF': INCOMPLETE, 'MID': INCOMPLETE, 'FWD': INCOMPLETE });
+
   const changeCategory = (category) => {
     let players = getPlayersByPosition(category);
     setActiveCategory(category);
@@ -33,6 +36,17 @@ const PlayerSelector = () => {
     return -1;
   };
 
+  const updateCategoryStatus = (category) => {
+    const current = userTeamSelection.players[category].length;
+    const required = userTeamSelection.formation.places[category];
+
+    const statuses = {...categoryStatus};
+    if(current < required) statuses[category] = 0;
+    if(current === required) statuses[category] = 1;
+    if(current > required) statuses[category] = -1;
+    setCategoryStatus(statuses);
+  };
+  
   const togglePlayerSelection = (id) => {
     let player = getPlayerByID(id);
     let selectedPlayerIndex = getSelectedPlayerIndex(player.position, id);
@@ -48,25 +62,54 @@ const PlayerSelector = () => {
       ...userTeamSelection,
       players: newPlayers
     });
+
+    updateCategoryStatus(player.position);
   };
+
+  const getCardStateClass = (player) => {
+    let stateClass = '';
+    const selected = (getSelectedPlayerIndex(player.position, player.id) > -1);
+
+    if(categoryStatus[player.position] === INCOMPLETE) {
+      stateClass = (selected ? 'is-selected' : '');
+    }
+    if(categoryStatus[player.position] === COMPLETED) {
+      stateClass = (selected ? 'is-valid' : 'is-disabled');
+    }
+    if(categoryStatus[player.position] === ERROR) {
+      stateClass = (selected ? 'is-invalid' : 'is-disabled');
+    }
+
+    return stateClass;
+  };
+
 
   return (
     <div className="playerselector" data-testid="PlayerSelector">
 
       <TodoTabs tabs={[
-        { id: 'GK',  label: `Goalkeepers (0/${userTeamSelection.formation.places[0]})` },
-        { id: 'DEF', label: `Defenders (0/${userTeamSelection.formation.places[1]})` },
-        { id: 'MID', label: `Midfielders (0/${userTeamSelection.formation.places[2]})` },
-        { id: 'FWD', label: `Forwards (0/${userTeamSelection.formation.places[3]})` },
+        { id: 'GK',  label: `Goalkeepers (${userTeamSelection.players['GK'].length}/${userTeamSelection.formation.places['GK']})` },
+        { id: 'DEF', label: `Defenders (${userTeamSelection.players['DEF'].length}/${userTeamSelection.formation.places['DEF']})` },
+        { id: 'MID', label: `Midfielders (${userTeamSelection.players['MID'].length}/${userTeamSelection.formation.places['MID']})` },
+        { id: 'FWD', label: `Forwards (${userTeamSelection.players['FWD'].length}/${userTeamSelection.formation.places['FWD']})` },
       ]} updateFn={changeCategory} />
 
       <div className="flex two three-600 six-1200">
 
-        {activeCategoryPlayers.map((p, i) => 
-          <div key={"p" + i}>
-            <SelectableCard title={p.name} description={p.club} image={p.photo} id={p.id} updateFn={togglePlayerSelection} />
-          </div>
-        )}
+        {activeCategoryPlayers.map((player, i) => {
+          return (
+            <div key={"p" + i}>
+              <SelectableCard
+                title={player.name}
+                description={player.club}
+                image={player.photo}
+                id={player.id}
+                stateClass={getCardStateClass(player)}
+                updateFn={togglePlayerSelection}
+              />
+            </div>
+          );
+        })};
 
       </div>
 
