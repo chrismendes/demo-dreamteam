@@ -1,0 +1,62 @@
+[
+    {
+        "name": "Mikel Arteta",
+        "club": "Arsenal",
+        "photo": "https://resources.premierleague.com/premierleague/photos/players/250x250/man51018.png"
+    },
+    {
+        "name": "Frank Lampard",
+        "club": "Chelsea",
+        "photo": "https://resources.premierleague.com/premierleague/photos/players/250x250/man50167.png"
+    },
+    {
+        "name": "Roy Hodgson",
+        "club": "Crystal Palace",
+        "photo": "https://resources.premierleague.com/premierleague/photos/players/250x250/man1280.png"
+    },
+    {
+        "name": "Carlo Ancelotti",
+        "club": "Everton",
+        "photo": "https://resources.premierleague.com/premierleague/photos/players/250x250/man50.png"
+    },
+    {
+        "name": "Brendan Rodgers",
+        "club": "Leicester",
+        "photo": "https://resources.premierleague.com/premierleague/photos/players/250x250/man38197.png"
+    },
+    {
+        "name": "Jürgen Klopp",
+        "club": "Liverpool",
+        "photo": "https://resources.premierleague.com/premierleague/photos/players/250x250/man279.png"
+    },
+    {
+        "name": "Josep Guardiola",
+        "club": "Manchester City",
+        "photo": "https://resources.premierleague.com/premierleague/photos/players/250x250/man37974.png"
+    },
+    {
+        "name": "Ole Gunnar Solskjær",
+        "club": "Manchester United",
+        "photo": "https://resources.premierleague.com/premierleague/photos/players/250x250/man40342.png"
+    },
+    {
+        "name": "José Mourinho",
+        "club": "Tottenham Hotspur",
+        "photo": "https://resources.premierleague.com/premierleague/photos/players/250x250/man134.png"
+    },
+    {
+        "name": "David Moyes",
+        "club": "West Ham United",
+        "photo": "https://resources.premierleague.com/premierleague/photos/players/250x250/man85.png"
+    },
+    {
+        "name": "Nuno Espírito Santo",
+        "club": "Wolverhampton Wanderers",
+        "photo": "https://resources.premierleague.com/premierleague/photos/players/250x250/man41809.png"
+    },
+    {
+        "name": "Slaven Bilic",
+        "club": "West Bromwich Albion",
+        "photo": "https://resources.premierleague.com/premierleague/photos/players/250x250/man37510.png"
+    }
+]
