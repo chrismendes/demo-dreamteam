@@ -4,6 +4,7 @@ import './TodoTabs.scss';
 const TodoTabs = (props) => {
 
   const [activeTab, setActiveTab] = useState(props.tabs[0].id);
+  const COMPLETE = 1, ERROR = -1, OK = 0;
 
   const changeTab = (id) => {
     setActiveTab(id);
@@ -11,9 +12,9 @@ const TodoTabs = (props) => {
   };
 
   const stateClasses = {
-    '1':  'is-complete',
-    '-1': 'is-error',
-    '0':  ''
+    [COMPLETE]: 'is-complete',
+    [ERROR]:    'is-error',
+    [OK]:       ''
   };
 
   return (
