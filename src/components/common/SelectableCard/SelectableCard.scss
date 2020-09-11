@@ -43,11 +43,11 @@
     background: linear-gradient(to bottom, #61C4EB, #0D85D1);
 }
 
-.selectablecard.is-valid {
+.selectablecard.is-approved {
     background: linear-gradient(to bottom, #75cc8e, #35854e);
 }
 
-.selectablecard.is-invalid {
+.selectablecard.is-error {
     background: linear-gradient(to bottom, #c76166, #b6272e);
 }
 

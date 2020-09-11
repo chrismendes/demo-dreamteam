@@ -74,10 +74,10 @@ const PlayerSelector = () => {
       stateClass = (selected ? 'is-selected' : '');
     }
     if(categoryStatus[player.position] === COMPLETED) {
-      stateClass = (selected ? 'is-valid' : 'is-disabled');
+      stateClass = (selected ? 'is-approved' : 'is-disabled');
     }
     if(categoryStatus[player.position] === ERROR) {
-      stateClass = (selected ? 'is-invalid' : 'is-disabled');
+      stateClass = (selected ? 'is-error' : 'is-disabled');
     }
 
     return stateClass;
