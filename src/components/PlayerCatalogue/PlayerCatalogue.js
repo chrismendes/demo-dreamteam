@@ -2,16 +2,15 @@ import React, { useState, useContext } from 'react';
 import TodoTabs from '../common/TodoTabs';
 import SelectableCard from '../common/SelectableCard';
 import UserTeamContext from '../../context/UserContext';
-import playerCatalogue from '../../data/players.json';
-import './PlayerSelector.scss';
+import playerList from '../../data/players.json';
 
-const PlayerSelector = () => {
+const PlayerCatalogue = () => {
 
   const getPlayersByPosition = (position) => {
-    return playerCatalogue.filter(player => player.position === position);
+    return playerList.filter(player => player.position === position);
   };
   const getPlayerByID = (id) => {
-    return playerCatalogue.filter(player => player.id === id)[0];
+    return playerList.filter(player => player.id === id)[0];
   };
 
   const [activeCategory, setActiveCategory] = useState('GK');
@@ -85,7 +84,7 @@ const PlayerSelector = () => {
 
 
   return (
-    <div className="playerselector" data-testid="PlayerSelector">
+    <div className="playercatalogue" data-testid="PlayerCatalogue">
 
       <TodoTabs tabs={[
         { id: 'GK',  label: `Goalkeepers (${userTeamSelection.players['GK'].length}/${userTeamSelection.formation.places['GK']})`, status: categoryStatus['GK'] },
@@ -117,4 +116,4 @@ const PlayerSelector = () => {
   );
 };
 
-export default PlayerSelector;
+export default PlayerCatalogue;
