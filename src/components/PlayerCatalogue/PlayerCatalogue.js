@@ -40,9 +40,9 @@ const PlayerCatalogue = () => {
     const required = userTeamSelection.formation.places[category];
 
     const statuses = {...categoryStatus};
-    if(current < required) statuses[category] = 0;
-    if(current === required) statuses[category] = 1;
-    if(current > required) statuses[category] = -1;
+    if(current < required) statuses[category] = INCOMPLETE;
+    if(current === required) statuses[category] = COMPLETED;
+    if(current > required) statuses[category] = ERROR;
     setCategoryStatus(statuses);
   };
   
@@ -65,23 +65,26 @@ const PlayerCatalogue = () => {
     updateCategoryStatus(player.position);
   };
 
-  const getCardStateClass = (player) => {
-    let stateClass = '';
+  const getPlayerStatus = (player) => {
     const selected = (getSelectedPlayerIndex(player.position, player.id) > -1);
+    let status = {
+      selected: selected,
+      approved: false,
+      error:    false,
+      disabled: false
+    };
 
-    if(categoryStatus[player.position] === INCOMPLETE) {
-      stateClass = (selected ? 'is-selected' : '');
-    }
     if(categoryStatus[player.position] === COMPLETED) {
-      stateClass = (selected ? 'is-approved' : 'is-disabled');
+      status.approved = selected;
+      status.disabled = !selected;
     }
     if(categoryStatus[player.position] === ERROR) {
-      stateClass = (selected ? 'is-error' : 'is-disabled');
+      status.error = selected;
+      status.disabled = !selected;
     }
 
-    return stateClass;
+    return status;
   };
-
 
   return (
     <div className="playercatalogue" data-testid="PlayerCatalogue">
@@ -103,7 +106,7 @@ const PlayerCatalogue = () => {
                 description={player.club}
                 image={player.photo}
                 id={player.id}
-                stateClass={getCardStateClass(player)}
+                status={getPlayerStatus(player)}
                 updateFn={togglePlayerSelection}
               />
             </div>

@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import LayoutHeader from './layouts/Header/LayoutHeader';
 import LayoutBody from './layouts/Body';
 import LayoutSection from './layouts/Section';
-import LayoutContainer from './layouts/Container';
 
 import AppHeader from './components/common/AppHeader';
 import FormationSelector from './components/FormationSelector';
@@ -36,18 +35,14 @@ const App = () => {
 
         <LayoutBody>
           <LayoutSection>
-            <LayoutContainer>
 
-              <FormationSelector />
+            <FormationSelector />
 
-            </LayoutContainer>
           </LayoutSection>
           <LayoutSection>
-            <LayoutContainer>
 
-              <PlayerCatalogue />
+            <PlayerCatalogue />
 
-            </LayoutContainer>
           </LayoutSection>
         </LayoutBody>
 

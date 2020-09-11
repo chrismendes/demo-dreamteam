@@ -1,10 +1,12 @@
 import React from 'react';
-
+import LayoutContainer from '../Container';
 import './LayoutSection.scss';
 
 const LayoutSection = (props) => (
     <div className="l-section flex one">
-        {props.children}
+        <LayoutContainer>
+            {props.children}
+        </LayoutContainer>
     </div>
 );
 
