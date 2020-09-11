@@ -109,7 +109,7 @@ const PlayerSelector = () => {
               />
             </div>
           );
-        })};
+        })}
 
       </div>
 
