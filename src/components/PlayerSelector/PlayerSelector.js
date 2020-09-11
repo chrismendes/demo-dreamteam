@@ -88,10 +88,10 @@ const PlayerSelector = () => {
     <div className="playerselector" data-testid="PlayerSelector">
 
       <TodoTabs tabs={[
-        { id: 'GK',  label: `Goalkeepers (${userTeamSelection.players['GK'].length}/${userTeamSelection.formation.places['GK']})` },
-        { id: 'DEF', label: `Defenders (${userTeamSelection.players['DEF'].length}/${userTeamSelection.formation.places['DEF']})` },
-        { id: 'MID', label: `Midfielders (${userTeamSelection.players['MID'].length}/${userTeamSelection.formation.places['MID']})` },
-        { id: 'FWD', label: `Forwards (${userTeamSelection.players['FWD'].length}/${userTeamSelection.formation.places['FWD']})` },
+        { id: 'GK',  label: `Goalkeepers (${userTeamSelection.players['GK'].length}/${userTeamSelection.formation.places['GK']})`, status: categoryStatus['GK'] },
+        { id: 'DEF', label: `Defenders (${userTeamSelection.players['DEF'].length}/${userTeamSelection.formation.places['DEF']})`, status: categoryStatus['DEF'] },
+        { id: 'MID', label: `Midfielders (${userTeamSelection.players['MID'].length}/${userTeamSelection.formation.places['MID']})`, status: categoryStatus['MID'] },
+        { id: 'FWD', label: `Forwards (${userTeamSelection.players['FWD'].length}/${userTeamSelection.formation.places['FWD']})`, status: categoryStatus['FWD'] }
       ]} updateFn={changeCategory} />
 
       <div className="flex two three-600 six-1200">
