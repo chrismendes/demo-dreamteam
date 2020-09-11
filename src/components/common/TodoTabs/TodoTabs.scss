@@ -26,6 +26,11 @@
     margin-right: 8px;
 }
 
+.todotabs > li > .todotabs__checkboxon {
+    display: none;
+}
+
+
 .todotabs > li.is-active {
     color: #0074d9;
     border-bottom-color: #0074d9;
@@ -33,13 +38,30 @@
     cursor: default;
 }
 
-.todotabs > li > .todotabs__checkboxon,
+
+.todotabs > li.is-complete {
+    color: #35854e;
+}
+.todotabs > li.is-complete.is-active {
+    border-bottom-color: #35854e;
+}
 .todotabs > li.is-complete > .todotabs__checkboxoff {
     display: none;
 }
 .todotabs > li.is-complete > .todotabs__checkboxon {
     display: block;
 }
-.todotabs > li.is-complete:not(.is-active) {
-    color: #35854e;
+
+
+.todotabs > li.is-error {
+    color: #b6272e;
+}
+.todotabs > li.is-error.is-active {
+    border-bottom-color: #b6272e;
+}
+.todotabs > li.is-error > .todotabs__checkboxon {
+    display: none;
+}
+.todotabs > li.is-error > .todotabs__checkboxoff {
+    display: block;
 }
