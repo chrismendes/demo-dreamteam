@@ -4,11 +4,11 @@ import UserTeamContext from '../../context/UserContext';
 import formations from '../../data/formations';
 
 const FormationSelector = () => {
-  const [userTeamState, setUserTeamState] = useContext(UserTeamContext);
+  const [userTeamSelection, setUserTeamSelection] = useContext(UserTeamContext);
 
   const setFormation = (newFormation) => {
-    setUserTeamState({
-      ...userTeamState,
+    setUserTeamSelection({
+      ...userTeamSelection,
       formation: newFormation
     });
   };
