@@ -42,9 +42,6 @@
 .todotabs > li.is-complete {
     color: #35854e;
 }
-.todotabs > li.is-complete.is-active {
-    border-bottom-color: #35854e;
-}
 .todotabs > li.is-complete > .todotabs__checkboxoff {
     display: none;
 }
@@ -55,9 +52,6 @@
 
 .todotabs > li.is-error {
     color: #b6272e;
-}
-.todotabs > li.is-error.is-active {
-    border-bottom-color: #b6272e;
 }
 .todotabs > li.is-error > .todotabs__checkboxon {
     display: none;
