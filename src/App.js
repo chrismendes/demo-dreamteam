@@ -13,16 +13,15 @@ import formations from './data/formations';
 
 const App = () => {
 
-  const defaultUserTeam = {
-    formation: formations[0],
-    players: {
-      'GK':  [],
-      'DEF': [],
-      'MID': [],
-      'FWD': [] 
-    }
+  const defaultUserFormation = formations[0];
+  const defaultUserPlayers = { 'GK':  [], 'DEF': [], 'MID': [], 'FWD': [] };
+  const defaultUserSelectionStatus = { 'GK': 0,  'DEF': 0,  'MID': 0,  'FWD': 0 };
+  const userTeamSelectionState = {
+    formation: useState(defaultUserFormation),
+    players:   useState(defaultUserPlayers),
+    status:    useState(defaultUserSelectionStatus)
   };
-  const userTeamHook = useState(defaultUserTeam);
+
 
   return (
     <React.Fragment>
@@ -31,7 +30,7 @@ const App = () => {
         <AppHeader />
       </LayoutHeader>
 
-      <UserTeamContext.Provider value={userTeamHook}>
+      <UserTeamContext.Provider value={userTeamSelectionState}>
 
         <LayoutBody>
           <LayoutSection>

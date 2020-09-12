@@ -28,6 +28,7 @@ const TodoTabs = (props) => {
       )}
     </ul>
   );
+
 };
 
 export default TodoTabs;

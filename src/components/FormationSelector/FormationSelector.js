@@ -4,17 +4,11 @@ import UserTeamContext from '../../context/UserContext';
 import formations from '../../data/formations';
 
 const FormationSelector = () => {
-  const [userTeamSelection, setUserTeamSelection] = useContext(UserTeamContext);
-
-  const setFormation = (newFormation) => {
-    setUserTeamSelection({
-      ...userTeamSelection,
-      formation: newFormation
-    });
-  };
+  const userTeamSelectionState = useContext(UserTeamContext);
+  const [userFormation, setUserFormation] = userTeamSelectionState.formation;
   
   return (
-    <SlideShow slides={formations} button="Change Formation" update={setFormation} />
+    <SlideShow slides={formations} button="Change Formation" update={setUserFormation} />
   );
 };
 
