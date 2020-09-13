@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import LayoutHeader from './layouts/Header/LayoutHeader';
 import LayoutPageHeader from './layouts/PageHeader';
@@ -26,7 +27,7 @@ const App = () => {
 
 
   return (
-    <React.Fragment>
+    <Router>
 
       <LayoutHeader>
         <AppHeader />
@@ -35,26 +36,30 @@ const App = () => {
       <UserTeamContext.Provider value={userState}>
 
         <LayoutBody>
-          <LayoutPageHeader>
 
-            <ProgressBar />
+          <Route exact path ="/">
+            <LayoutPageHeader>
 
-          </LayoutPageHeader>
-          <LayoutSection>
+              <ProgressBar />
 
-            <FormationSelector />
+            </LayoutPageHeader>
+            <LayoutSection>
 
-          </LayoutSection>
-          <LayoutSection>
+              <FormationSelector />
 
-            <PlayerCatalogue />
+            </LayoutSection>
+            <LayoutSection>
 
-          </LayoutSection>
+              <PlayerCatalogue />
+
+            </LayoutSection>
+          </Route>
+
         </LayoutBody>
 
       </UserTeamContext.Provider>
 
-    </React.Fragment>
+    </Router>
   );
 }
 
