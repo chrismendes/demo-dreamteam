@@ -88,9 +88,8 @@ const PlayerCatalogue = () => {
 
   const updateUserChecklist = (playerPosition) => {
     const statuses = {...userChecklist};
-    statuses[playerPosition] = getPlayerCategoryStatus[playerPosition];
+    statuses[playerPosition] = getPlayerCategoryStatus(playerPosition);
     setUserChecklist(statuses);
-console.log(statuses);
   };
 
   const initCategoryTabs = () => {
