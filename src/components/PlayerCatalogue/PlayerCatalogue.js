@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect, useCallback } from 'react';
+import React, { useState, useContext } from 'react';
 import TodoTabs from '../common/TodoTabs';
 import SelectableCard from '../common/SelectableCard';
 import UserStateContext from '../../context/UserContext';
@@ -90,6 +90,7 @@ const PlayerCatalogue = () => {
     const statuses = {...userChecklist};
     statuses[playerPosition] = getPlayerCategoryStatus[playerPosition];
     setUserChecklist(statuses);
+console.log(statuses);
   };
 
   const initCategoryTabs = () => {
