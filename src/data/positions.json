@@ -1,0 +1,18 @@
+[
+    {
+        "id": "GK",
+        "label": "Goalkeeper"
+    },
+    {
+        "id": "DEF",
+        "label": "Defender"
+    },
+    {
+        "id": "MID",
+        "label": "Midfielder"
+    },
+    {
+        "id": "FWD",
+        "label": "Forward"
+    }
+]

@@ -2,6 +2,7 @@ import React, { useState, useContext, useEffect, useCallback } from 'react';
 import TodoTabs from '../common/TodoTabs';
 import SelectableCard from '../common/SelectableCard';
 import UserTeamContext from '../../context/UserContext';
+import playerPositions from '../../data/positions.json';
 import playerList from '../../data/players.json';
 
 const PlayerCatalogue = () => {
@@ -18,10 +19,9 @@ const PlayerCatalogue = () => {
   const [userPlayers, setUserPlayers] = userTeamSelectionState.players;
   const [userSelectionStatus, setUserSelectionStatus] = userTeamSelectionState.status;
 
-  const [activeCategory, setActiveCategory] = useState('GK');
+  const [activeCategory, setActiveCategory] = useState(playerPositions[0].id);
   const [activeCategoryPlayers, setActiveCategoryPlayers] = useState(getPlayersByPosition(activeCategory));
   const ERROR = -1, INCOMPLETE = 0, COMPLETED = 1;
-  const positionIDs = Object.keys(userPlayers);
 
   const changeCategory = (category) => {
     let players = getPlayersByPosition(category);
@@ -53,7 +53,7 @@ const PlayerCatalogue = () => {
     updateCategoryStatus(player.position);
   };
 
-  const updateCategoryStatus = useCallback((category) => {
+  const updateCategoryStatus = (category) => {
     const current = userPlayers[category].length;
     const required = userFormation.places[category];
 
@@ -63,7 +63,7 @@ const PlayerCatalogue = () => {
     if(current > required) statuses[category] = ERROR;
 
     setUserSelectionStatus(statuses);
-  }, [userPlayers, userFormation, userSelectionStatus, setUserSelectionStatus, ERROR, INCOMPLETE, COMPLETED]);
+  };
 
   const getPlayerStatus = (player) => {
     const selected = (getSelectedPlayerIndex(player.position, player.id) > -1);
@@ -75,7 +75,7 @@ const PlayerCatalogue = () => {
     };
 
     if(userSelectionStatus[player.position] === COMPLETED) {
-    status.approved = selected;
+      status.approved = selected;
       status.disabled = !selected;
     }
     if(userSelectionStatus[player.position] === ERROR) {
@@ -86,21 +86,27 @@ const PlayerCatalogue = () => {
     return status;
   };
 
-  useEffect(() => {
-    positionIDs.forEach((position) => {
-      // updateCategoryStatus(position);
+  const initCategoryTabs = () => {
+    let tabs = [];
+    playerPositions.forEach((position, i) => {
+      const tab = {...playerPositions[i]};
+      tab.status = INCOMPLETE;
+      if(userPlayers[position.id].length === userFormation.places[position.id]) tab.status = COMPLETED;
+      if(userPlayers[position.id].length > userFormation.places[position.id]) tab.status = ERROR;
+      tab.label = `${tab.label}s (${userPlayers[position.id].length}/${userFormation.places[position.id]})`;
+      tabs.push(tab)
     });
-  }, [userFormation, positionIDs, updateCategoryStatus]);
+    return tabs;
+  };
+  const tabConfig = initCategoryTabs();
 
   return (
     <div className="playercatalogue" data-testid="PlayerCatalogue">
 
-      <TodoTabs tabs={[
-        { id: 'GK',  label: `Goalkeepers (${userPlayers['GK'].length}/${userFormation.places['GK']})`, status: userSelectionStatus['GK'] },
-        { id: 'DEF', label: `Defenders (${userPlayers['DEF'].length}/${userFormation.places['DEF']})`, status: userSelectionStatus['DEF'] },
-        { id: 'MID', label: `Midfielders (${userPlayers['MID'].length}/${userFormation.places['MID']})`, status: userSelectionStatus['MID'] },
-        { id: 'FWD', label: `Forwards (${userPlayers['FWD'].length}/${userFormation.places['FWD']})`, status: userSelectionStatus['FWD'] }
-      ]} updateFn={changeCategory} />
+      <TodoTabs
+        tabs={tabConfig}
+        updateFn={changeCategory}
+      />
 
       <div className="flex two three-600 six-1200">
 
