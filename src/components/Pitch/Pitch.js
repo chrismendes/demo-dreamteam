@@ -1,15 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import pitchImage from './pitch.jpg';
 import './Pitch.scss';
 
 const Pitch = () => (
-  <div className="Pitch" data-testid="Pitch">
-    Pitch Component
+  <div className="pitch" data-testid="Pitch">
+    <img src={pitchImage} alt="Football pitch" />
   </div>
 );
-
-Pitch.propTypes = {};
-
-Pitch.defaultProps = {};
 
 export default Pitch;

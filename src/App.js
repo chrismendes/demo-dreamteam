@@ -10,9 +10,10 @@ import LayoutTwoColumnsMain from './layouts/TwoColumnsMain';
 import LayoutTwoColumnsSide from './layouts/TwoColumnsSide';
 
 import AppHeader from './components/common/AppHeader';
+import ProgressBar from './components/common/ProgressBar';
 import FormationSelector from './components/FormationSelector';
 import PlayerCatalogue from './components/PlayerCatalogue';
-import ProgressBar from './components/common/ProgressBar';
+import Pitch from './components/Pitch';
 
 import UserTeamContext from './context/UserContext';
 import formations from './data/formations';
@@ -76,7 +77,7 @@ const App = () => {
                 </LayoutTwoColumnsSide>
                 <LayoutTwoColumnsMain>
 
-                  <FormationSelector />
+                  <Pitch />
 
                   </LayoutTwoColumnsMain>
                 </LayoutTwoColumns>
