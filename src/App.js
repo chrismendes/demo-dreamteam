@@ -5,6 +5,9 @@ import LayoutHeader from './layouts/Header/LayoutHeader';
 import LayoutPageHeader from './layouts/PageHeader';
 import LayoutBody from './layouts/Body';
 import LayoutSection from './layouts/Section';
+import LayoutTwoColumns from './layouts/TwoColumns';
+import LayoutTwoColumnsMain from './layouts/TwoColumnsMain';
+import LayoutTwoColumnsSide from './layouts/TwoColumnsSide';
 
 import AppHeader from './components/common/AppHeader';
 import FormationSelector from './components/FormationSelector';
@@ -52,6 +55,31 @@ const App = () => {
             <LayoutSection>
 
               <PlayerCatalogue />
+
+            </LayoutSection>
+          </Route>
+
+
+          <Route exact path ="/tactics">
+            <LayoutPageHeader>
+
+              <ProgressBar steps={appSteps} active="2" />
+
+            </LayoutPageHeader>
+            <LayoutSection>
+
+              <LayoutTwoColumns>
+                <LayoutTwoColumnsSide>
+
+                  <p>Sidebar</p>
+
+                </LayoutTwoColumnsSide>
+                <LayoutTwoColumnsMain>
+
+                  <FormationSelector />
+
+                  </LayoutTwoColumnsMain>
+                </LayoutTwoColumns>
 
             </LayoutSection>
           </Route>
