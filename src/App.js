@@ -24,6 +24,7 @@ const App = () => {
     players:   useState(defaultUserPlayers),
     checklist: useState(appChecklist)
   };
+  const appSteps = [ 'Pick Your Players', 'Select Tactics', 'Compare Teams' ];
 
 
   return (
@@ -40,7 +41,7 @@ const App = () => {
           <Route exact path ="/">
             <LayoutPageHeader>
 
-              <ProgressBar />
+              <ProgressBar steps={appSteps} active="1" />
 
             </LayoutPageHeader>
             <LayoutSection>
