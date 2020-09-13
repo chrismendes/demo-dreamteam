@@ -14,6 +14,7 @@ import ProgressBar from './components/common/ProgressBar';
 import FormationSelector from './components/FormationSelector';
 import PlayerCatalogue from './components/PlayerCatalogue';
 import Pitch from './components/Pitch';
+import TeamSheet from './components/TeamSheet';
 
 import UserTeamContext from './context/UserContext';
 import formations from './data/formations';
@@ -72,7 +73,7 @@ const App = () => {
               <LayoutTwoColumns>
                 <LayoutTwoColumnsSide>
 
-                  <p>Sidebar</p>
+                  <TeamSheet />
 
                 </LayoutTwoColumnsSide>
                 <LayoutTwoColumnsMain>

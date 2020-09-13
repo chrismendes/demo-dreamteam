@@ -1,8 +1,8 @@
 import React from 'react';
 import './SelectableCard.scss';
+import './SelectableCardHorizontal.scss';
 
 const SelectableCard = (props) => {
-
   const updateAppState = props.updateFn;
 
   const toggleSelection = () => {
@@ -25,7 +25,7 @@ const SelectableCard = (props) => {
   };
 
   return (
-    <article onClick={toggleSelection} className={`selectablecard ${applicableStateClasses()}`}>
+    <article onClick={toggleSelection} className={`selectablecard ${applicableStateClasses()} ${(props.horizontal === "true") ? 'selectablecard-horizontal' : ''}`}>
       <img className="selectablecard__image" src={props.image} alt="" />
       <span className="selectablecard__title">{props.title}</span>
       <span className="selectablecard__description">{props.description}</span>
