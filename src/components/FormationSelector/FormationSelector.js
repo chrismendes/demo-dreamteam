@@ -5,7 +5,8 @@ import formations from '../../data/formations';
 
 const FormationSelector = () => {
   const userTeamSelectionState = useContext(UserTeamContext);
-  const [userFormation, setUserFormation] = userTeamSelectionState.formation;
+  // eslint-disable-next-line
+  const [_, setUserFormation] = userTeamSelectionState.formation;
   
   return (
     <SlideShow slides={formations} button="Change Formation" update={setUserFormation} />
