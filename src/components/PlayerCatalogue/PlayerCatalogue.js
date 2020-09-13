@@ -64,7 +64,7 @@ const PlayerCatalogue = () => {
     return status;
   };
   
-  const getPlayerStatus = (player) => {
+  const calculatePlayerStatus = (player) => {
     const selected = (getSelectedPlayerIndex(player.position, player.id) > -1);
 
     let status = {
@@ -117,6 +117,7 @@ const PlayerCatalogue = () => {
       <div className="flex two three-600 six-1200">
 
         {activeCategoryPlayers.map((player, i) => {
+          const status = calculatePlayerStatus(player);
           return (
             <div key={"p" + i}>
               <SelectableCard
@@ -124,7 +125,10 @@ const PlayerCatalogue = () => {
                 description={player.club}
                 image={player.photo}
                 id={player.id}
-                status={getPlayerStatus(player)}
+                selected={status['selected']}
+                approved={status['approved']}
+                error={status['error']}
+                disabled={status['disabled']}
                 updateFn={togglePlayerSelection}
               />
             </div>

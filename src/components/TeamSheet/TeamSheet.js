@@ -1,31 +1,42 @@
 import React, { useState, useContext } from 'react';
 import SelectableCard from '../common/SelectableCard';
 import UserStateContext from '../../context/UserContext';
-// import playerPositions from '../../data/positions.json';
+
+import userPlayers from '../../data/test.userplayers.json';
+
+let userPlayersFlatList = [];
+for(const [key, value] of Object.entries(userPlayers)) {
+  userPlayersFlatList.push(...value);
+}
 
 const TeamSheet = () => {
 
-  
+  const userState = useContext(UserStateContext);
+  const [userFormation] = userState.formation;
+  // const [userPlayers, setUserPlayers] = userState.players;
 
   return (
-    <div className="teamsheet" data-testid="TeamSheet">
+    <div className="teamsheet flex one" data-testid="TeamSheet">
 
-      <SelectableCard title="Joe Blogs" description="Arsenal" image="https://resources.premierleague.com/premierleague/photos/players/250x250/p80201.png" horizontal="true" status="0" updateFn={() => {}} />
-
-      {/* {[].map((player, i) => {
+      {userPlayersFlatList.map((player, i) => {
         return (
           <div key={"p" + i}>
             <SelectableCard
+              horizontal="true"
               title={player.name}
               description={player.club}
               image={player.photo}
               id={player.id}
-              // status={getPlayerStatus(player)}
+              selected="false"
+              disabled="false"
+              approved="false"
+              error="false"
+              updateFn={() => {}}
               // updateFn={togglePlayerSelection}
             />
           </div>
         );
-      })} */}
+      })}
 
     </div>
   );

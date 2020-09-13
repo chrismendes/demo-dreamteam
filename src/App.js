@@ -68,6 +68,12 @@ const App = () => {
               <ProgressBar steps={appSteps} active="2" />
 
             </LayoutPageHeader>
+
+            <LayoutSection>
+
+              <p>Drag your players onto the pitch.</p>
+
+            </LayoutSection>
             <LayoutSection>
 
               <LayoutTwoColumns>

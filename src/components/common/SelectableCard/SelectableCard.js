@@ -9,19 +9,15 @@ const SelectableCard = (props) => {
     if(updateAppState) updateAppState(props.id);
   };
 
-  const stateClasses = {
-    selected: 'is-selected',
-    approved: 'is-approved',
-    error:    'is-error',
-    disabled: 'is-disabled'
-  };
-
   const applicableStateClasses = () => {
-    let classes = '';
-    for(const [key, value] of Object.entries(props.status)) {
-      if(value === true) classes += ` ${stateClasses[key]}`;
-    }
-    return classes;
+    let classes = [];
+    
+    if(props.selected === 'true') classes.push('is-selected');
+    if(props.approved === 'true') classes.push('is-approved');
+    if(props.error === 'true')    classes.push('is-error');
+    if(props.disabled === 'true') classes.push('is-disabled');
+
+    return classes.join(' ');
   };
 
   return (
