@@ -26,7 +26,8 @@
     margin-right: 8px;
 }
 
-.todotabs > li > .todotabs__checkboxon {
+.todotabs > li > .todotabs__checkboxon,
+.todotabs > li > .todotabs__checkboxerror {
     display: none;
 }
 
@@ -53,9 +54,10 @@
 .todotabs > li.is-error {
     color: #b6272e;
 }
-.todotabs > li.is-error > .todotabs__checkboxon {
+.todotabs > li.is-error > .todotabs__checkboxon,
+.todotabs > li.is-error > .todotabs__checkboxoff {
     display: none;
 }
-.todotabs > li.is-error > .todotabs__checkboxoff {
+.todotabs > li.is-error > .todotabs__checkboxerror {
     display: block;
 }

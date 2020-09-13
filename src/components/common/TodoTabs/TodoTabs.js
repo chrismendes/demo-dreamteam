@@ -24,6 +24,7 @@ const TodoTabs = (props) => {
         <li onClick={() => changeTab(tab.id)} className={(activeTab === tab.id ? 'is-active' : '') + ` ${stateClasses[tab.status]}`} key={'tab' + i}>
           <span className="todotabs__checkboxoff material-icons">check_box_outline_blank</span>
           <span className="todotabs__checkboxon material-icons">check_box</span>
+          <span className="todotabs__checkboxerror material-icons">warning</span>
           {tab.label}
         </li>
       )}
