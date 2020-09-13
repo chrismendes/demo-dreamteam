@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect, useCallback } from 'react';
 import TodoTabs from '../common/TodoTabs';
 import SelectableCard from '../common/SelectableCard';
-import UserTeamContext from '../../context/UserContext';
+import UserStateContext from '../../context/UserContext';
 import playerPositions from '../../data/positions.json';
 import playerList from '../../data/players.json';
 
@@ -14,10 +14,10 @@ const PlayerCatalogue = () => {
     return playerList.filter(player => player.id === id)[0];
   };
 
-  const userTeamSelectionState = useContext(UserTeamContext);
-  const [userFormation] = userTeamSelectionState.formation;
-  const [userPlayers, setUserPlayers] = userTeamSelectionState.players;
-  const [userSelectionStatus, setUserSelectionStatus] = userTeamSelectionState.status;
+  const userState = useContext(UserStateContext);
+  const [userFormation] = userState.formation;
+  const [userPlayers, setUserPlayers] = userState.players;
+  const [userChecklist, setUserChecklist] = userState.checklist;
 
   const [activeCategory, setActiveCategory] = useState(playerPositions[0].id);
   const [activeCategoryPlayers, setActiveCategoryPlayers] = useState(getPlayersByPosition(activeCategory));
@@ -37,7 +37,7 @@ const PlayerCatalogue = () => {
     }
     return -1;
   };
-  
+
   const togglePlayerSelection = (id) => {
     let player = getPlayerByID(id);
     let selectedPlayerIndex = getSelectedPlayerIndex(player.position, id);
@@ -50,23 +50,23 @@ const PlayerCatalogue = () => {
     }
 
     setUserPlayers(newPlayers);
-    updateCategoryStatus(player.position);
+    updateUserChecklist(player.position);
   };
 
-  const updateCategoryStatus = (category) => {
-    const current = userPlayers[category].length;
-    const required = userFormation.places[category];
+  const getPlayerCategoryStatus = (playerPosition) => {
+    const current = userPlayers[playerPosition].length;
+    const required = userFormation.places[playerPosition];
+    let status = INCOMPLETE;
+    
+    if(current === required) status = COMPLETED;
+    if(current > required)   status = ERROR;
 
-    const statuses = {...userSelectionStatus};
-    if(current < required) statuses[category] = INCOMPLETE;
-    if(current === required) statuses[category] = COMPLETED;
-    if(current > required) statuses[category] = ERROR;
-
-    setUserSelectionStatus(statuses);
+    return status;
   };
-
+  
   const getPlayerStatus = (player) => {
     const selected = (getSelectedPlayerIndex(player.position, player.id) > -1);
+
     let status = {
       selected: selected,
       approved: false,
@@ -74,16 +74,22 @@ const PlayerCatalogue = () => {
       disabled: false
     };
 
-    if(userSelectionStatus[player.position] === COMPLETED) {
+    if(getPlayerCategoryStatus(player.position) === COMPLETED) {
       status.approved = selected;
       status.disabled = !selected;
     }
-    if(userSelectionStatus[player.position] === ERROR) {
+    if(getPlayerCategoryStatus(player.position) === ERROR) {
       status.error = selected;
       status.disabled = !selected;
     }
 
     return status;
+  };
+
+  const updateUserChecklist = (playerPosition) => {
+    const statuses = {...userChecklist};
+    statuses[playerPosition] = getPlayerCategoryStatus[playerPosition];
+    setUserChecklist(statuses);
   };
 
   const initCategoryTabs = () => {

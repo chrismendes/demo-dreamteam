@@ -15,11 +15,11 @@ const App = () => {
 
   const defaultUserFormation = formations[0];
   const defaultUserPlayers = { 'GK':  [], 'DEF': [], 'MID': [], 'FWD': [] };
-  const defaultUserSelectionStatus = { 'GK': 0,  'DEF': 0,  'MID': 0,  'FWD': 0 };
-  const userTeamSelectionState = {
+  const appChecklist = { 'GK': 0,  'DEF': 0,  'MID': 0,  'FWD': 0 };
+  const userState = {
     formation: useState(defaultUserFormation),
     players:   useState(defaultUserPlayers),
-    status:    useState(defaultUserSelectionStatus)
+    checklist: useState(appChecklist)
   };
 
 
@@ -30,7 +30,7 @@ const App = () => {
         <AppHeader />
       </LayoutHeader>
 
-      <UserTeamContext.Provider value={userTeamSelectionState}>
+      <UserTeamContext.Provider value={userState}>
 
         <LayoutBody>
           <LayoutSection>
