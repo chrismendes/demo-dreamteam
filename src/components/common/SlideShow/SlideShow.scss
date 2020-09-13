@@ -12,8 +12,12 @@ ul.slideshow__images {
 }
 ul.slideshow__images > li {
     display: none;
+    margin: 0;
 }
 ul.slideshow__images > li.is-active {
+    display: block;
+}
+ul.slideshow__images > li > img {
     display: block;
 }
 

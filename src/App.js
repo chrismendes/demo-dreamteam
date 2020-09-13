@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 
 import LayoutHeader from './layouts/Header/LayoutHeader';
+import LayoutPageHeader from './layouts/PageHeader';
 import LayoutBody from './layouts/Body';
 import LayoutSection from './layouts/Section';
 
 import AppHeader from './components/common/AppHeader';
 import FormationSelector from './components/FormationSelector';
 import PlayerCatalogue from './components/PlayerCatalogue';
+import ProgressBar from './components/common/ProgressBar';
 
 import UserTeamContext from './context/UserContext';
 import formations from './data/formations';
@@ -33,6 +35,11 @@ const App = () => {
       <UserTeamContext.Provider value={userState}>
 
         <LayoutBody>
+          <LayoutPageHeader>
+
+            <ProgressBar />
+
+          </LayoutPageHeader>
           <LayoutSection>
 
             <FormationSelector />
