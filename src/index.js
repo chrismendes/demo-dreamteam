@@ -11,20 +11,17 @@ import LayoutBody from './layouts/Body';
 import AppHeader from './components/common/AppHeader';
 import PickPlayersView from './views/PickPlayers';
 import SelectTacticsView from './views/SelectTactics';
-import UserTeamContext from './context/UserContext';
-import formations from './data/formations';
+
+import UserSessionContext from './session/UserSessionContext';
+import userSessionDefaults from './session/userSessionDefaults';
 
 
 const App = () => {
 
-  // (TODO: Move)
-  const defaultUserFormation = formations[0];
-  const defaultUserPlayers = { 'GK':  [], 'DEF': [], 'MID': [], 'FWD': [] };
-  const appChecklist = { 'GK': 0,  'DEF': 0,  'MID': 0,  'FWD': 0 };
-  const userState = {
-    formation: useState(defaultUserFormation),
-    players:   useState(defaultUserPlayers),
-    checklist: useState(appChecklist)
+  const userSessionState = {
+    checklist: useState(userSessionDefaults.appProgress),
+    formation: useState(userSessionDefaults.formation),
+    players:   useState(userSessionDefaults.players)
   };
 
   return (
@@ -35,7 +32,7 @@ const App = () => {
       </LayoutSiteHeader>
 
       <LayoutBody>
-        <UserTeamContext.Provider value={userState}>
+        <UserSessionContext.Provider value={userSessionState}>
 
           <Route exact path ="/">
             <PickPlayersView />
@@ -45,7 +42,7 @@ const App = () => {
             <SelectTacticsView />
           </Route>
 
-        </UserTeamContext.Provider>
+        </UserSessionContext.Provider>
       </LayoutBody>
 
     </Router>

@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import SelectableCard from '../common/SelectableCard';
-import UserStateContext from '../../context/UserContext';
+import UserSessionContext from '../../session/UserSessionContext';
 
 import userPlayers from '../../data/test.userplayers.json';
 
@@ -11,9 +11,9 @@ for(const [key, value] of Object.entries(userPlayers)) {
 
 const TeamSheet = () => {
 
-  const userState = useContext(UserStateContext);
-  const [userFormation] = userState.formation;
-  // const [userPlayers, setUserPlayers] = userState.players;
+  const userSessionState = useContext(UserSessionContext);
+  const [userFormation] = userSessionState.formation;
+  // const [userPlayers, setUserPlayers] = userSessionState.players;
 
   return (
     <div className="teamsheet flex one" data-testid="TeamSheet">

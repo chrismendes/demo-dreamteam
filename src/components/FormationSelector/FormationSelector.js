@@ -1,12 +1,12 @@
 import React, { useContext } from 'react';
 import SlideShow from '../common/SlideShow';
-import UserTeamContext from '../../context/UserContext';
+import UserSessionContext from '../../session/UserSessionContext';
 import formations from '../../data/formations';
 
 const FormationSelector = () => {
-  const userTeamSelectionState = useContext(UserTeamContext);
+  const userSessionState = useContext(UserSessionContext);
   // eslint-disable-next-line
-  const [_, setUserFormation] = userTeamSelectionState.formation;
+  const [_, setUserFormation] = userSessionState.formation;
   
   return (
     <SlideShow slides={formations} button="Change Formation" update={setUserFormation} />

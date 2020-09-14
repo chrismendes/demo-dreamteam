@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import TodoTabs from '../common/TodoTabs';
 import SelectableCard from '../common/SelectableCard';
-import UserStateContext from '../../context/UserContext';
+import UserSessionContext from '../../session/UserSessionContext';
 import playerPositions from '../../data/positions.json';
 import playerList from '../../data/players.json';
 
@@ -14,10 +14,10 @@ const PlayerCatalogue = () => {
     return playerList.filter(player => player.id === id)[0];
   };
 
-  const userState = useContext(UserStateContext);
-  const [userFormation] = userState.formation;
-  const [userPlayers, setUserPlayers] = userState.players;
-  const [userChecklist, setUserChecklist] = userState.checklist;
+  const userSessionState = useContext(UserSessionContext);
+  const [userFormation] = userSessionState.formation;
+  const [userPlayers, setUserPlayers] = userSessionState.players;
+  const [userChecklist, setUserChecklist] = userSessionState.checklist;
 
   const [activeCategory, setActiveCategory] = useState(playerPositions[0].id);
   const [activeCategoryPlayers, setActiveCategoryPlayers] = useState(getPlayersByPosition(activeCategory));
