@@ -11,11 +11,11 @@ const SelectableCard = (props) => {
 
   const applicableStateClasses = () => {
     let classes = [];
-    
-    if(props.selected === 'true') classes.push('is-selected');
-    if(props.approved === 'true') classes.push('is-approved');
-    if(props.error === 'true')    classes.push('is-error');
-    if(props.disabled === 'true') classes.push('is-disabled');
+
+    if(props.selected === true) classes.push('is-selected');
+    if(props.approved === true) classes.push('is-approved');
+    if(props.error === true)    classes.push('is-error');
+    if(props.disabled === true) classes.push('is-disabled');
 
     return classes.join(' ');
   };
