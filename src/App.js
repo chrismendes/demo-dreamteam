@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import LayoutHeader from './layouts/Header/LayoutHeader';
+import LayoutSiteHeader from './layouts/SiteHeader';
 import LayoutPageHeader from './layouts/PageHeader';
 import LayoutBody from './layouts/Body';
 import LayoutSection from './layouts/Section';
@@ -35,9 +35,9 @@ const App = () => {
   return (
     <Router>
 
-      <LayoutHeader>
+      <LayoutSiteHeader>
         <AppHeader />
-      </LayoutHeader>
+      </LayoutSiteHeader>
 
       <UserTeamContext.Provider value={userState}>
 
