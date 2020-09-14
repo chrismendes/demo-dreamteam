@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import SelectableCard from '../common/SelectableCard';
-import UserSessionContext from '../../session/UserSessionContext';
+import UserSessionContext from '../../contexts/UserSessionContext';
 
 import userPlayers from '../../data/test.userplayers.json';
 

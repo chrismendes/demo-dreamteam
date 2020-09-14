@@ -8,7 +8,7 @@
     justify-content: center;
 }
 
-.progressbar li {
+.progressbar > li {
     float: left;
     width: 20%;
     position: relative;
@@ -16,7 +16,22 @@
     margin: 0;
   }
 
-  .progressbar li:before {
+  .progressbar > li > a {
+    height: 100%;
+    width: 100%;
+    display: block;
+
+    padding: 70px 0 40px 0;
+
+    margin: -70px 0 -40px 0;
+    z-index: 9;
+    position: relative;
+
+    color: inherit;
+    user-select: none;
+  }
+
+  .progressbar > li:before {
     content: counter(step);
     counter-increment: step;
 
@@ -38,7 +53,7 @@
     color: #ffffff;
 }
 
-.progressbar li:after {
+.progressbar > li:after {
     content: '';
     position: absolute;
     width: 100%;
@@ -49,22 +64,22 @@
     background: #3aac5d;
   }
 
-.progressbar li:first-child:after {
+.progressbar > li:first-child:after {
     content: none;
 }
 
-.progressbar li.is-active:after {
+.progressbar > li.is-active:after {
     background: #c0c0c0;
 }
-.progressbar li.is-active:before {
+.progressbar > li.is-active:before {
     border-color: #e1a713;
     background: #e1a713;
 }
 
-.progressbar li.is-active ~ li:after {
+.progressbar > li.is-active ~ li:after {
     background: #c0c0c0;
 }
-.progressbar li.is-active ~ li:before {
+.progressbar > li.is-active ~ li:before {
     border-color: #bebebe;
     background: #ffffff;
     color: #bebebe;

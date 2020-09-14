@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import SlideShow from '../common/SlideShow';
-import UserSessionContext from '../../session/UserSessionContext';
+import UserSessionContext from '../../contexts/UserSessionContext';
 import formations from '../../data/formations';
 
 const FormationSelector = () => {

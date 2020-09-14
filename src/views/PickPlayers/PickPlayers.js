@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
+
+import AppConfigContext from '../../contexts/AppConfigContext';
 
 import LayoutPageHeader from '../../layouts/PageHeader';
 import LayoutSection from '../../layouts/Section';
@@ -7,15 +9,17 @@ import ProgressBar from '../../components/common/ProgressBar';
 import FormationSelector from '../../components/FormationSelector';
 import PlayerCatalogue from '../../components/PlayerCatalogue';
 
-// (TODO: Move)
-const appSteps = [ 'Pick Your Players', 'Select Your Tactics', 'Save Your Team', 'Compare Teams' ];
 
 const PickPlayers = () => {
+
+  const appConfig = useContext(AppConfigContext);
+  const progressBarSteps = appConfig.progressBarSteps;
+
   return (
     <React.Fragment>
 
       <LayoutPageHeader>
-        <ProgressBar steps={appSteps} active="1" />
+        <ProgressBar steps={progressBarSteps} active="1" />
       </LayoutPageHeader>
 
       <LayoutSection>
