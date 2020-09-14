@@ -1,10 +1,22 @@
 import React from 'react';
-import pitchImage from './pitch.jpg';
+import pitchImage from './img/pitch.jpg';
 import './Pitch.scss';
 
 const Pitch = () => (
-  <div className="pitch" data-testid="Pitch">
-    <img src={pitchImage} alt="Football pitch" />
+  <div className="pitch pitch-352" data-testid="Pitch">
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
   </div>
 );
 
