@@ -24,7 +24,7 @@ const TeamSheet = () => {
               horizontal="true"
               draggable="true"
               title={player.name}
-              description={player.club}
+              description={player.position}
               image={player.photo}
               id={player.id}
               selected="false"
