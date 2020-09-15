@@ -58,7 +58,7 @@
     margin-top: 0;
     margin-left: -20px;
 
-    background: #0D85D1;
+    background: linear-gradient(to bottom, #36a4e8, #0D85D1);
     box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.2);
 
     text-align: center;
@@ -72,7 +72,7 @@
 }
 .pitch > li.is-occupied[draggable=true]:hover > .pitch__playername {
     box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.3);
-    background: lighten(#0D85D1, 3%);
+    background: linear-gradient(to bottom, lighten(#36a4e8, 3%), lighten(#0D85D1, 3%));
 
     position: relative;
     z-index: 9;
