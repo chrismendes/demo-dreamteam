@@ -22,6 +22,7 @@ const TeamSheet = () => {
           <div key={"p" + i}>
             <SelectableCard
               horizontal="true"
+              draggable="true"
               title={player.name}
               description={player.club}
               image={player.photo}

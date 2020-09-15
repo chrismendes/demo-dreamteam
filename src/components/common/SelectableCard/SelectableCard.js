@@ -3,7 +3,9 @@ import './SelectableCard.scss';
 import './SelectableCardHorizontal.scss';
 
 const SelectableCard = (props) => {
+
   const updateAppState = props.updateFn;
+  const draggable = (props.draggable || false);
 
   const toggleSelection = () => {
     if(updateAppState) updateAppState(props.id);
@@ -21,7 +23,7 @@ const SelectableCard = (props) => {
   };
 
   return (
-    <article onClick={toggleSelection} className={`selectablecard ${applicableStateClasses()} ${(props.horizontal === "true") ? 'selectablecard-horizontal' : ''}`}>
+    <article onClick={toggleSelection} className={`selectablecard ${applicableStateClasses()} ${(props.horizontal === "true") ? 'selectablecard-horizontal' : ''}`} draggable={draggable}>
       <img className="selectablecard__image" src={props.image} alt="" />
       <span className="selectablecard__title">{props.title}</span>
       <span className="selectablecard__description">{props.description}</span>

@@ -72,3 +72,8 @@
         color: inherit;
     }
 }
+
+
+.selectablecard[draggable=true] {
+    cursor: move;
+}
