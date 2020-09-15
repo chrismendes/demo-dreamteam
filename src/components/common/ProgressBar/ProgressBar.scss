@@ -14,9 +14,9 @@
     position: relative;
     text-align: center;
     margin: 0;
-  }
+}
 
-  .progressbar > li > a {
+.progressbar > li > a {
     height: 100%;
     width: 100%;
     display: block;
@@ -27,13 +27,17 @@
     z-index: 9;
     position: relative;
 
-    color: inherit;
+    color: #888888;
     user-select: none;
-  }
+}
 
-  .progressbar > li:before {
-    content: counter(step);
-    counter-increment: step;
+.progressbar > li.is-active > a {
+    color: inherit;
+}
+
+.progressbar > li:before {
+    font-family: 'Material Icons';
+    content: 'done';
 
     width: 30px;
     height: 30px;
@@ -51,6 +55,12 @@
     border-radius: 50%;
     background: #3aac5d;
     color: #ffffff;
+}
+
+.progressbar > li.is-active:before,
+.progressbar > li ~ li:before {
+    content: attr(number);
+    font-family: inherit;
 }
 
 .progressbar > li:after {
