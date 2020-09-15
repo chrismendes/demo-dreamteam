@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import TodoTabs from '../common/TodoTabs';
 import SelectableCard from '../common/SelectableCard';
 import UserSessionContext from '../../contexts/UserSessionContext';
@@ -100,6 +100,11 @@ const PlayerCatalogue = () => {
     updatedChecklist[0] = userCanProgress;
     setUserChecklist(updatedChecklist);
   };
+
+  useEffect(() => {
+    updateUserChecklist();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [userFormation]);
 
   const initCategoryTabs = () => {
     let tabs = [];
