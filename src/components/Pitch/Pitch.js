@@ -8,8 +8,7 @@ const Pitch = () => {
   const [userFormation] = userSessionState.formation;
 
   return (
-    <div className={`pitch pitch-${userFormation.id}`} data-testid="Pitch">
-      <ul>
+      <ul className={`pitch pitch-${userFormation.id}`} data-testid="Pitch">
         <li></li>
         <li></li>
         <li></li>
@@ -22,7 +21,7 @@ const Pitch = () => {
         <li></li>
         <li></li>
       </ul>
-    </div>
+    // </div>
   );
 };
 
