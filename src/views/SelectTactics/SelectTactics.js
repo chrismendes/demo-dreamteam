@@ -1,6 +1,8 @@
 import React, { useContext } from 'react';
+import { Redirect } from 'react-router-dom';
 
 import AppConfigContext from '../../contexts/AppConfigContext';
+import UserSessionContext from '../../contexts/UserSessionContext';
 
 import LayoutPageHeader from '../../layouts/PageHeader';
 import LayoutSection from '../../layouts/Section';
@@ -18,8 +20,15 @@ const SelectTactics = () => {
   const appConfig = useContext(AppConfigContext);
   const progressBarSteps = appConfig.progressBarSteps;
 
+  const userSessionState = useContext(UserSessionContext);
+  const [userChecklist] = userSessionState.checklist;
+
   return (
     <React.Fragment>
+      
+      {userChecklist[0] === false &&
+        <Redirect to="/" />
+      }
 
       <LayoutPageHeader>
         <ProgressBar steps={progressBarSteps} active="2" />

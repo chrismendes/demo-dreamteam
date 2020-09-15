@@ -50,7 +50,7 @@ const PlayerCatalogue = () => {
     }
 
     setUserPlayers(newPlayers);
-    updateUserChecklist(player.position);
+    updateUserChecklist();
   };
 
   const getPlayerCategoryStatus = (playerPosition) => {
@@ -86,10 +86,19 @@ const PlayerCatalogue = () => {
     return status;
   };
 
-  const updateUserChecklist = (playerPosition) => {
-    const statuses = {...userChecklist};
-    statuses[playerPosition] = getPlayerCategoryStatus(playerPosition);
-    setUserChecklist(statuses);
+  const updateUserChecklist = () => {
+    let updatedChecklist = [...userChecklist];
+    let userCanProgress = true;
+
+    playerPositions.map((position, i) => {
+      let status = getPlayerCategoryStatus(position.id);
+      if(status === INCOMPLETE || status === ERROR) {
+        userCanProgress = false;
+      }
+    });
+
+    updatedChecklist[0] = userCanProgress;
+    setUserChecklist(updatedChecklist);
   };
 
   const initCategoryTabs = () => {
