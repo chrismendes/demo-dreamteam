@@ -14,7 +14,10 @@ const Pitch = () => {
         <li></li>
         <li></li>
         <li></li>
-        <li></li>
+        <li className="is-occupied">
+          <img src="https://resources.premierleague.com/premierleague/photos/players/250x250/p182539.png" />
+          <span>Pierre-Emerick Aubameyang</span>
+        </li>
         <li></li>
         <li></li>
         <li></li>
