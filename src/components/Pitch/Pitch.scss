@@ -25,12 +25,17 @@
     margin-left: -45px;
     position: absolute;
 
-    opacity: 0.5;
+    opacity: 0.4;
 
     background-image: url('./img/silhouette.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
+}
+
+.pitch__playerimage,
+.pitch__playername {
+    display: none;
 }
 
 .pitch > li.is-occupied {
@@ -39,13 +44,13 @@
     background: none;
     opacity: 1;
 }
-.pitch > li.is-occupied > img {
+.pitch > li.is-occupied > .pitch__playerimage {
     max-width: 90px;
     display: block;
     user-select: none;
     pointer-events: none;
 }
-.pitch > li.is-occupied > span {
+.pitch > li.is-occupied > .pitch__playername {
     width: 100%;
     padding: 6px;
     display: inline-block;
@@ -65,17 +70,39 @@
 .pitch > li.is-occupied[draggable=true] {
     cursor: move;
 }
-.pitch > li.is-occupied[draggable=true]:hover > span {
+.pitch > li.is-occupied[draggable=true]:hover > .pitch__playername {
     box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.3);
-    background: lighten(#0D85D1, 2%);
+    background: lighten(#0D85D1, 3%);
 
     position: relative;
     z-index: 9;
 }
-.pitch > li.is-occupied[draggable=true]:hover > img {
-    filter: drop-shadow(0px 0px 4px rgba(255,255,255,0.4));
+.pitch > li.is-occupied[draggable=true]:hover > .pitch__playerimage {
+    position: relative;
+    z-index: 1;
 }
 
+.pitch > li.is-highlighted {
+    opacity: 1;
+}
+.pitch > li.is-occupied[draggable=true]:hover:before {
+    content: '';
+    display: block;
+    width: 5px;
+    height: 5px;
+    left: 50%;
+    margin-left: -20px;
+    top: 50%;
+    box-shadow: 0px 0px 50px 50px rgba(235, 235, 14, 0.2);
+
+    z-index: 0;
+    position: absolute;
+}
+
+
+// ---
+// Player Positioning
+// ---
 
 // Goalkeeper
 .pitch > li:nth-child(1) {
@@ -83,10 +110,7 @@
     left: 50%;
 }
 
-
-// ---
 // 442 / 442 (Diamond)
-// ---
 .pitch,
 .pitch.pitch-442 > ul,
 .pitch.pitch-442d {
@@ -132,9 +156,7 @@
 
 }
 
-// ---
 // 442 (Diamond)
-// ---
 .pitch.pitch-442d {
     li:nth-child(7) {    // Midfielder
         bottom: 42%;
@@ -146,9 +168,7 @@
     }
 }
 
-// ---
 // 541
-// ---
 .pitch.pitch-541 {
 
     // Wing Backs
@@ -194,9 +214,7 @@
 
 }
 
-// ---
 // 351
-// ---
 .pitch.pitch-352 {
 
     // Back Three
