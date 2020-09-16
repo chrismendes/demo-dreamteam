@@ -72,8 +72,9 @@
     line-height: 1.3em;
     color: #ffffff;
 }
-.pitch > li.is-occupied[draggable=true] {
-    cursor: move;
+.pitch > li.is-occupied[draggable=true],
+.pitch > li.is-occupied[draggable=true]:active {
+    cursor: grab;
 }
 .pitch > li.is-occupied[draggable=true]:hover > .pitch__playername {
     box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.3);
@@ -89,7 +90,6 @@
 
 .pitch > li.is-highlighted {
     opacity: 1;
-    // border: 2px solid rgba(235, 235, 14, 0.6);
 }
 .pitch > li.is-occupied[draggable=true]:hover:before {
     content: '';
