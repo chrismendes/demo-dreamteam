@@ -55,12 +55,13 @@ const Pitch = () => {
   const handlePlayerDragStart = (e, player) => {
     e.dataTransfer.setData('playerID', player.id); // (IE?) e.dataTransfer.setData('text/plain', playerID)
 
-    // Extract to common share between TeamSheet/Pitch
+    // (TODO: Extract to common share between TeamSheet/Pitch)
     let dragImage = new Image(); 
     let dragImageContainer = document.createElement('div');
     dragImage.src = player.photo;
     dragImage.width = 110;
     dragImage.height = 110;
+    dragImageContainer.style.position = 'absolute'; dragImageContainer.style.top = '0px'; dragImageContainer.style.left= '-500px';
     dragImageContainer.appendChild(dragImage);
     document.querySelector('body').appendChild(dragImageContainer);
     e.dataTransfer.setDragImage(dragImageContainer, 55, 55);
