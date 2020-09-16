@@ -15,14 +15,8 @@ const TeamSheet = () => {
 
     // (TODO: Extract to common share between TeamSheet/Pitch)
     let dragImage = new Image(); 
-    let dragImageContainer = document.createElement('div');
     dragImage.src = player.photo;
-    dragImage.width = 110;
-    dragImage.height = 110;
-    dragImageContainer.style.position = 'absolute'; dragImageContainer.style.top = '0px'; dragImageContainer.style.left= '-500px';
-    dragImageContainer.appendChild(dragImage);
-    document.querySelector('body').appendChild(dragImageContainer);
-    e.dataTransfer.setDragImage(dragImageContainer, 55, 55);
+    e.dataTransfer.setDragImage(dragImage, 55, 55);
   };
 
   const dragAndDropConfig = (player) => {
