@@ -3,7 +3,7 @@ import TodoTabs from '../common/TodoTabs';
 import SelectableCard from '../common/SelectableCard';
 import UserSessionContext from '../../contexts/UserSessionContext';
 import playerPositions from '../../data/positions.json';
-import playerList from '../../data/players.json';
+import playerList from '../../data/players';
 
 // (TODO: Extract get/helper functions)
 

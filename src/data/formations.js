@@ -1,7 +1,7 @@
-import image442 from './img/442.png';
-import image442d from './img/442d.png';
-import image541 from './img/541.png';
-import image352 from './img/352.png';
+import image442 from './img/formations/442.png';
+import image442d from './img/formations/442d.png';
+import image541 from './img/formations/541.png';
+import image352 from './img/formations/352.png';
 
 const formations = [
     {
