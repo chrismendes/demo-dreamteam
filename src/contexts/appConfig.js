@@ -2,17 +2,17 @@ const tasks = [
     {
         title: 'Pick Your Players',
         description: 'Choose your formation and eleven players from below.',
-        link: '/tactics'
+        links: [null, '/tactics']
     },
     {
         title: 'Select Your Tactics',
         description: 'Drag your players into their positions on the pitch.',
-        link: '/save'
+        links: ['/', '/save']
     },
     {
         title: 'Save Your Team',
         description: 'Enter your first name and continue to review other submitted teams.',
-        link: '/save'
+        links: ['/tactics', '/compare']
     }
 ];
 

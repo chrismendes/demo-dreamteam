@@ -36,13 +36,16 @@
     margin: 10px 0 20px 0;
 }
 
-.taskstatus__button.button {
+.taskstatus__buttonforward.button {
     background-color: #a00500;
     display: none;
 }
-
 .taskstatus__buttondisabled[disabled] {
     cursor: not-allowed;
+}
+.taskstatus > a,
+.taskstatus > button {
+    margin-right: 12px;
 }
 
 .taskstatus.is-completed {
