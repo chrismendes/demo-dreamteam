@@ -1,87 +1,79 @@
-{
-    "GK": [
-      {
-        "id": 1,
-        "name": "Bernd Leno",
-        "club": "Arsenal",
-        "position": "GK",
-        "photo": "https://resources.premierleague.com/premierleague/photos/players/250x250/p80201.png"
-      }
-    ],
-    "DEF": [
-      {
-        "id": 3,
-        "name": "David Luiz",
-        "club": "Arsenal",
-        "position": "DEF",
-        "photo": "https://resources.premierleague.com/premierleague/photos/players/250x250/p41270.png"
-      },
-      {
-        "id": 5,
-        "name": "Héctor Bellerín",
-        "club": "Arsenal",
-        "position": "DEF",
-        "photo": "https://resources.premierleague.com/premierleague/photos/players/250x250/p98745.png"
-      },
-      {
-        "id": 6,
-        "name": "Kieran Tierney",
-        "club": "Arsenal",
-        "position": "DEF",
-        "photo": "https://resources.premierleague.com/premierleague/photos/players/250x250/p192895.png"
-      },
-      {
-        "id": 11,
-        "name": "César Azpilicueta",
-        "club": "Chelsea",
-        "position": "DEF",
-        "photo": "https://resources.premierleague.com/premierleague/photos/players/250x250/p41328.png"
-      }
-    ],
-    "MID": [
-      {
-        "id": 2,
-        "name": "Dani Ceballos",
-        "club": "Arsenal",
-        "position": "MID",
-        "photo": "https://resources.premierleague.com/premierleague/photos/players/250x250/p182539.png"
-      },
-      {
-        "id": 4,
-        "name": "Granit Xhaka",
-        "club": "Arsenal",
-        "position": "MID",
-        "photo": "https://resources.premierleague.com/premierleague/photos/players/250x250/p84450.png"
-      },
-      {
-        "id": 7,
-        "name": "Mesut Ozil",
-        "club": "Arsenal",
-        "position": "MID",
-        "photo": "https://resources.premierleague.com/premierleague/photos/players/250x250/p37605.png"
-      },
-      {
-        "id": 9,
-        "name": "Jack Grealish",
-        "club": "Aston Villa",
-        "position": "MID",
-        "photo": "https://resources.premierleague.com/premierleague/photos/players/250x250/p114283.png"
-      }
-    ],
-    "FWD": [
-      {
-        "id": 8,
-        "name": "Pierre-Emerick Aubameyang",
-        "club": "Arsenal",
-        "position": "FWD",
-        "photo": "https://resources.premierleague.com/premierleague/photos/players/250x250/p54694.png"
-      },
-      {
-        "id": 15,
-        "name": "Tammy Abraham",
-        "club": "Chelsea",
-        "position": "FWD",
-        "photo": "https://resources.premierleague.com/premierleague/photos/players/250x250/p173879.png"
-      }
-    ]
+[
+  {
+    "id": 1,
+    "name": "Bernd Leno",
+    "club": "Arsenal",
+    "position": "GK",
+    "photo": "https://resources.premierleague.com/premierleague/photos/players/250x250/p80201.png"
+  },
+  {
+    "id": 3,
+    "name": "David Luiz",
+    "club": "Arsenal",
+    "position": "DEF",
+    "photo": "https://resources.premierleague.com/premierleague/photos/players/250x250/p41270.png"
+  },
+  {
+    "id": 5,
+    "name": "Héctor Bellerín",
+    "club": "Arsenal",
+    "position": "DEF",
+    "photo": "https://resources.premierleague.com/premierleague/photos/players/250x250/p98745.png"
+  },
+  {
+    "id": 6,
+    "name": "Kieran Tierney",
+    "club": "Arsenal",
+    "position": "DEF",
+    "photo": "https://resources.premierleague.com/premierleague/photos/players/250x250/p192895.png"
+  },
+  {
+    "id": 11,
+    "name": "César Azpilicueta",
+    "club": "Chelsea",
+    "position": "DEF",
+    "photo": "https://resources.premierleague.com/premierleague/photos/players/250x250/p41328.png"
+  },
+  {
+    "id": 2,
+    "name": "Dani Ceballos",
+    "club": "Arsenal",
+    "position": "MID",
+    "photo": "https://resources.premierleague.com/premierleague/photos/players/250x250/p182539.png"
+  },
+  {
+    "id": 4,
+    "name": "Granit Xhaka",
+    "club": "Arsenal",
+    "position": "MID",
+    "photo": "https://resources.premierleague.com/premierleague/photos/players/250x250/p84450.png"
+  },
+  {
+    "id": 7,
+    "name": "Mesut Ozil",
+    "club": "Arsenal",
+    "position": "MID",
+    "photo": "https://resources.premierleague.com/premierleague/photos/players/250x250/p37605.png"
+  },
+  {
+    "id": 9,
+    "name": "Jack Grealish",
+    "club": "Aston Villa",
+    "position": "MID",
+    "photo": "https://resources.premierleague.com/premierleague/photos/players/250x250/p114283.png"
+  },
+  {
+    "id": 8,
+    "name": "Pierre-Emerick Aubameyang",
+    "club": "Arsenal",
+    "position": "FWD",
+    "photo": "https://resources.premierleague.com/premierleague/photos/players/250x250/p54694.png"
+  },
+  {
+    "id": 15,
+    "name": "Tammy Abraham",
+    "club": "Chelsea",
+    "position": "FWD",
+    "photo": "https://resources.premierleague.com/premierleague/photos/players/250x250/p173879.png"
   }
+]

@@ -5,13 +5,15 @@ import UserSessionContext from '../../contexts/UserSessionContext';
 import playerPositions from '../../data/positions.json';
 import playerList from '../../data/players.json';
 
+// (TODO: Extract get/helper functions)
+
 const PlayerCatalogue = () => {
 
   const getPlayersByPosition = (position) => {
     return playerList.filter(player => player.position === position);
   };
   const getPlayerByID = (id) => {
-    return playerList.filter(player => player.id === id)[0];
+    return playerList.filter(player => player.id === parseInt(id))[0];
   };
 
   const userSessionState = useContext(UserSessionContext);
@@ -23,30 +25,22 @@ const PlayerCatalogue = () => {
   const [activeCategoryPlayers, setActiveCategoryPlayers] = useState(getPlayersByPosition(activeCategory));
   const ERROR = -1, INCOMPLETE = 0, COMPLETED = 1;
 
+
   const changeCategory = (category) => {
     let players = getPlayersByPosition(category);
     setActiveCategory(category);
     setActiveCategoryPlayers(players);
   };
 
-  const getSelectedPlayerIndex = (position, id) => {
-    for(let i = 0; i < userPlayers[position].length; i++) {
-      if(userPlayers[position][i].id === id) {
-        return i;
-      }
-    }
-    return -1;
-  };
+  const togglePlayerSelection = (playerID) => {
+    let player = getPlayerByID(playerID);
+    const playerIndex = userPlayers.findIndex((p) => p.id === playerID);
+    let newPlayers = [...userPlayers];
 
-  const togglePlayerSelection = (id) => {
-    let player = getPlayerByID(id);
-    let selectedPlayerIndex = getSelectedPlayerIndex(player.position, id);
-    let newPlayers = {...userPlayers};
-
-    if(selectedPlayerIndex > -1) {
-      newPlayers[player.position].splice(selectedPlayerIndex, 1);
+    if(playerIndex > -1) {
+      newPlayers.splice(playerIndex, 1);
     } else {
-      newPlayers[player.position].push(player);
+      newPlayers.push(player);
     }
 
     setUserPlayers(newPlayers);
@@ -54,18 +48,19 @@ const PlayerCatalogue = () => {
   };
 
   const getPlayerCategoryStatus = (playerPosition) => {
-    const current = userPlayers[playerPosition].length;
+    const currentlySelected = userPlayers.filter((p) => p.position === playerPosition).length;
     const required = userFormation.places[playerPosition];
+
     let status = INCOMPLETE;
-    
-    if(current === required) status = COMPLETED;
-    if(current > required)   status = ERROR;
+
+    if(currentlySelected === required) status = COMPLETED;
+    if(currentlySelected > required)   status = ERROR;
 
     return status;
   };
   
   const calculatePlayerStatus = (player) => {
-    const selected = (getSelectedPlayerIndex(player.position, player.id) > -1);
+    const selected = (userPlayers.findIndex((p) => p.id === player.id) > -1);
 
     let status = {
       selected: selected,
@@ -90,12 +85,12 @@ const PlayerCatalogue = () => {
     let updatedChecklist = [...userChecklist];
     let userCanProgress = true;
 
-    playerPositions.map((position, i) => {
+    for (const position of playerPositions) {
       let status = getPlayerCategoryStatus(position.id);
       if(status === INCOMPLETE || status === ERROR) {
         userCanProgress = false;
       }
-    });
+    };
 
     updatedChecklist[0] = userCanProgress;
     setUserChecklist(updatedChecklist);
@@ -109,11 +104,12 @@ const PlayerCatalogue = () => {
   const initCategoryTabs = () => {
     let tabs = [];
     playerPositions.forEach((position, i) => {
+      const currentlySelected = userPlayers.filter((p) => p.position === position).length;
       const tab = {...playerPositions[i]};
       tab.status = INCOMPLETE;
-      if(userPlayers[position.id].length === userFormation.places[position.id]) tab.status = COMPLETED;
-      if(userPlayers[position.id].length > userFormation.places[position.id]) tab.status = ERROR;
-      tab.label = `${tab.label}s (${userPlayers[position.id].length}/${userFormation.places[position.id]})`;
+
+      tab.status = getPlayerCategoryStatus(position.id);
+      tab.label = `${tab.label}s (${userPlayers.filter((p) => p.position === position.id).length}/${userFormation.places[position.id]})`;
       tabs.push(tab)
     });
     return tabs;

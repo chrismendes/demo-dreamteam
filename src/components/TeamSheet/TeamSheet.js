@@ -1,4 +1,5 @@
-import React, { useState, useContext } from 'react';
+// import React, { useContext } from 'react';
+import React from 'react';
 import SelectableCard from '../common/SelectableCard';
 // import UserSessionContext from '../../contexts/UserSessionContext';
 
@@ -8,21 +9,28 @@ const TeamSheet = () => {
 
   // const userSessionState = useContext(UserSessionContext);
   // const [userPlayers] = userSessionState.players;
-  let userPlayersFlatList = [];
+  
+  const handlePlayerDragStart = (e, playerID, playerName, playerImage) => {
+    e.dataTransfer.setData('playerID', playerID); // (IE?) e.dataTransfer.setData('text/plain', playerID)
+  };
 
-  for(const [key, value] of Object.entries(userPlayers)) {
-    userPlayersFlatList.push(...value);
-  }
+  const dragAndDropConfig = (playerID) => {
+    return {
+      draggable: true,
+      onDragStart: (e) => handlePlayerDragStart(e, playerID)
+    }
+  };
+
 
   return (
     <div className="teamsheet flex one" data-testid="TeamSheet">
-
-      {userPlayersFlatList.map((player, i) => {
+      {userPlayers.map((player, i) => {
         return (
           <div key={"p" + i}>
             <SelectableCard
               horizontal="true"
               draggable="true"
+              dragAndDropConfig={dragAndDropConfig(player.id)}
               title={player.name}
               description={player.position}
               image={player.photo}
