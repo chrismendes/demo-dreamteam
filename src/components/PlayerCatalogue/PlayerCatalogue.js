@@ -133,7 +133,7 @@ const PlayerCatalogue = () => {
               <SelectableCard
                 title={player.name}
                 description={player.club}
-                image={player.photo}
+                image={player.photo.large}
                 id={player.id}
                 selected={status['selected']}
                 approved={status['approved']}
