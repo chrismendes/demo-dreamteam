@@ -1,8 +1,16 @@
-.l-section {
+.l-section,
+.l-section-alt {
     padding: 60px 30px;
     background: #ffffff;
 }
 
 .l-section:nth-of-type(even) {
-    background: #efefef;
+    background: #f7f7f7;
+}
+
+.l-section-alt {
+    background: #f7f7f7;
+}
+.l-section-alt:nth-of-type(even) {
+    background: #ffffff;
 }

@@ -35,7 +35,7 @@ const SelectTactics = () => {
         <ProgressBar steps={appConfig.progressBarSteps} active="2" />
       </LayoutPageHeader>
 
-      <LayoutSection>
+      <LayoutSection altColourFirst="true">
         <LayoutTwoColumns>
 
           <LayoutTwoColumnsSide>
