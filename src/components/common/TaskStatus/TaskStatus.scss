@@ -3,6 +3,7 @@
     font-size: 1em;
     font-weight: bold;
     color: #777777;
+    user-select: none;
 
     width: 100%;
     display: inline-block;
@@ -12,10 +13,12 @@
 .taskstatus__taskname {
     display: inline-block;
     width: 100%;
+    user-select: none;
 }
 .taskstatus__tasknametext {
     padding: 0;
     font-size: 2.4em;
+    user-select: none;
 
     float: left;
 }
@@ -34,6 +37,7 @@
     width: 100%;
     display: inline-block;
     margin: 10px 0 20px 0;
+    user-select: none;
 }
 
 .taskstatus__buttonforward.button {
