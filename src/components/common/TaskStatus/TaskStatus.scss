@@ -38,10 +38,11 @@
 
 .taskstatus__button.button {
     background-color: #a00500;
+    display: none;
 }
 
-.taskstatus__button.button {
-    display: none;
+.taskstatus__buttondisabled[disabled] {
+    cursor: not-allowed;
 }
 
 .taskstatus.is-completed {
@@ -51,7 +52,7 @@
     }
 
     .taskstatus__checkboxoff.material-icons,
-    .taskstatus__buttondisabled.button {
+    .taskstatus__buttondisabled {
         display: none;
     }
     .taskstatus__checkboxon.material-icons,

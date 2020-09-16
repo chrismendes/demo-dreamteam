@@ -16,7 +16,7 @@ const TaskStatus = (props) => {
             </span>
             <span className="taskstatus__taskdesc">{task.description}</span>
             <Link to={task.link} className="taskstatus__button button">Continue &gt;</Link>
-            <Link to={task.link} className="taskstatus__buttondisabled button" disabled>Continue &gt;</Link>
+            <button to={task.link} className="taskstatus__buttondisabled" disabled>Continue &gt;</button>
         </div>
     );
 
