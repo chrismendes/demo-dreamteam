@@ -52,11 +52,21 @@ const Pitch = () => {
     addPlayerToPitch(positionID, playerID);
   };
 
-  const dragProps = {
+  const handlePlayerDragStart = (e, playerID) => {
+    e.dataTransfer.setData('playerID', playerID); // (IE?) e.dataTransfer.setData('text/plain', playerID)
+  };
+
+  const dropConfig = {
     onDrop:      (e) => handlePlayerDropIntoPosition(e),
     onDragEnter: (e) => handlePlayerDragOverPosition(e),
     onDragLeave: (e) => handlePlayerDragOutOfPosition(e),
     onDragOver:  (e) => e.preventDefault()
+  };
+  const dragConfig = (playerID) => {
+    return {
+      draggable: true,
+      onDragStart: (e) => handlePlayerDragStart(e, playerID)
+    };
   };
 
   const pitchPositions = [...new Array(11)].map((_, i) => {
@@ -65,8 +75,9 @@ const Pitch = () => {
     const stateClass =  (player) ? 'is-occupied' : '';
     const playerName =  (player) ? <span className="pitch__playername">{player.name}</span> : '';
     const playerImage = (player) ? <img className="pitch__playerimage" src={player.photo} alt={player.name} /> : '';
+    const dndProps =    (player) ? {...dropConfig, ...dragConfig(player.id)} : dropConfig;
 
-    return <li className={stateClass} {...dragProps} key={i} data-positionid={i}>
+    return <li className={stateClass} {...dndProps} key={i} data-positionid={i}>
       {playerImage}
       {playerName}
     </li>;

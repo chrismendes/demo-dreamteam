@@ -10,7 +10,7 @@ const TeamSheet = () => {
   // const userSessionState = useContext(UserSessionContext);
   // const [userPlayers] = userSessionState.players;
   
-  const handlePlayerDragStart = (e, playerID, playerName, playerImage) => {
+  const handlePlayerDragStart = (e, playerID) => {
     e.dataTransfer.setData('playerID', playerID); // (IE?) e.dataTransfer.setData('text/plain', playerID)
   };
 
