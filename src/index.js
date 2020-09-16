@@ -12,16 +12,13 @@ import LayoutBody from './layouts/Body';
 import AppHeader from './components/common/AppHeader';
 
 import AppConfigContext from './contexts/AppConfigContext';
-import progressBarSteps from './contexts/appConfig';
+import appConfig from './contexts/appConfig';
 import UserSessionContext from './contexts/UserSessionContext';
 import userSessionDefaults from './contexts/userSessionDefaults';
 
 
 const App = () => {
 
-  const appConfig = {
-    progressBarSteps: progressBarSteps
-  };
   const userSessionState = {
     checklist: useState(userSessionDefaults.appProgress),
     formation: useState(userSessionDefaults.formation),

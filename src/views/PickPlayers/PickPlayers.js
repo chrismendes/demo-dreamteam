@@ -5,6 +5,7 @@ import AppConfigContext from '../../contexts/AppConfigContext';
 import LayoutPageHeader from '../../layouts/PageHeader';
 import LayoutSection from '../../layouts/Section';
 
+import TaskStatus from '../../components/common/TaskStatus';
 import ProgressBar from '../../components/common/ProgressBar';
 import FormationSelector from '../../components/FormationSelector';
 import PlayerCatalogue from '../../components/PlayerCatalogue';
@@ -13,13 +14,13 @@ import PlayerCatalogue from '../../components/PlayerCatalogue';
 const PickPlayers = () => {
 
   const appConfig = useContext(AppConfigContext);
-  const progressBarSteps = appConfig.progressBarSteps;
 
   return (
     <React.Fragment>
 
       <LayoutPageHeader>
-        <ProgressBar steps={progressBarSteps} active="1" />
+        <TaskStatus tasks={appConfig.tasks} active="1" />
+        <ProgressBar steps={appConfig.progressBarSteps} active="1" />
       </LayoutPageHeader>
 
       <LayoutSection>

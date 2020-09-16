@@ -104,7 +104,6 @@ const PlayerCatalogue = () => {
   const initCategoryTabs = () => {
     let tabs = [];
     playerPositions.forEach((position, i) => {
-      const currentlySelected = userPlayers.filter((p) => p.position === position).length;
       const tab = {...playerPositions[i]};
       tab.status = INCOMPLETE;
 

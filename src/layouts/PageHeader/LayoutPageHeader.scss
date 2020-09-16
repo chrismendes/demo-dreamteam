@@ -1,4 +1,17 @@
 .l-pageheader {
-    padding: 40px 0;
+    padding: 50px 0;
     background: #f7f7f7;
+}
+
+.l-pageheader > .l-container {
+    display: flex;
+    align-items: center;
+}
+
+.l-pageheader .taskstatus {
+    width: 40%;
+    margin-right: 2%;
+}
+.l-pageheader .progressbar {
+    width: 58%;
 }
