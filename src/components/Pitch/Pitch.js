@@ -52,8 +52,18 @@ const Pitch = () => {
     addPlayerToPitch(positionID, playerID);
   };
 
-  const handlePlayerDragStart = (e, playerID) => {
-    e.dataTransfer.setData('playerID', playerID); // (IE?) e.dataTransfer.setData('text/plain', playerID)
+  const handlePlayerDragStart = (e, player) => {
+    e.dataTransfer.setData('playerID', player.id); // (IE?) e.dataTransfer.setData('text/plain', playerID)
+
+    // Extract to common share between TeamSheet/Pitch
+    let dragImage = new Image(); 
+    let dragImageContainer = document.createElement('div');
+    dragImage.src = player.photo;
+    dragImage.width = 110;
+    dragImage.height = 110;
+    dragImageContainer.appendChild(dragImage);
+    document.querySelector('body').appendChild(dragImageContainer);
+    e.dataTransfer.setDragImage(dragImageContainer, 55, 55);
   };
 
   const dropConfig = {
@@ -62,10 +72,10 @@ const Pitch = () => {
     onDragLeave: (e) => handlePlayerDragOutOfPosition(e),
     onDragOver:  (e) => e.preventDefault()
   };
-  const dragConfig = (playerID) => {
+  const dragConfig = (player) => {
     return {
       draggable: true,
-      onDragStart: (e) => handlePlayerDragStart(e, playerID)
+      onDragStart: (e) => handlePlayerDragStart(e, player)
     };
   };
 
@@ -75,7 +85,7 @@ const Pitch = () => {
     const stateClass =  (player) ? 'is-occupied' : '';
     const playerName =  (player) ? <span className="pitch__playername">{player.name}</span> : '';
     const playerImage = (player) ? <img className="pitch__playerimage" src={player.photo} alt={player.name} /> : '';
-    const dndProps =    (player) ? {...dropConfig, ...dragConfig(player.id)} : dropConfig;
+    const dndProps =    (player) ? {...dropConfig, ...dragConfig(player)} : dropConfig;
 
     return <li className={stateClass} {...dndProps} key={i} data-positionid={i}>
       {playerImage}

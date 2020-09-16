@@ -10,14 +10,23 @@ const TeamSheet = () => {
   // const userSessionState = useContext(UserSessionContext);
   // const [userPlayers] = userSessionState.players;
   
-  const handlePlayerDragStart = (e, playerID) => {
-    e.dataTransfer.setData('playerID', playerID); // (IE?) e.dataTransfer.setData('text/plain', playerID)
+  const handlePlayerDragStart = (e, player) => {
+    e.dataTransfer.setData('playerID', player.id); // (IE?) e.dataTransfer.setData('text/plain', playerID)
+
+    let dragImage = new Image(); 
+    let dragImageContainer = document.createElement('div');
+    dragImage.src = player.photo;
+    dragImage.width = 110;
+    dragImage.height = 110;
+    dragImageContainer.appendChild(dragImage);
+    document.querySelector('body').appendChild(dragImageContainer);
+    e.dataTransfer.setDragImage(dragImageContainer, 55, 55);
   };
 
-  const dragAndDropConfig = (playerID) => {
+  const dragAndDropConfig = (player) => {
     return {
       draggable: true,
-      onDragStart: (e) => handlePlayerDragStart(e, playerID)
+      onDragStart: (e) => handlePlayerDragStart(e, player)
     }
   };
 
@@ -30,7 +39,7 @@ const TeamSheet = () => {
             <SelectableCard
               horizontal="true"
               draggable="true"
-              dragAndDropConfig={dragAndDropConfig(player.id)}
+              dragAndDropConfig={dragAndDropConfig(player)}
               title={player.name}
               description={player.position}
               image={player.photo}
