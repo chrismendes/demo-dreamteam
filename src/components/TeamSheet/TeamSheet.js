@@ -3,7 +3,7 @@ import React from 'react';
 import SelectableCard from '../common/SelectableCard';
 // import UserSessionContext from '../../contexts/UserSessionContext';
 
-import userPlayers from '../../data/test.userplayers.json';
+import userPlayers from '../../data/test.userplayers';
 
 const TeamSheet = () => {
 
@@ -15,7 +15,7 @@ const TeamSheet = () => {
 
     // (TODO: Extract to common share between TeamSheet/Pitch)
     let dragImage = new Image(); 
-    dragImage.src = player.photo;
+    dragImage.src = player.photo.small;
     e.dataTransfer.setDragImage(dragImage, 55, 55);
   };
 
@@ -38,7 +38,7 @@ const TeamSheet = () => {
               dragAndDropConfig={dragAndDropConfig(player)}
               title={player.name}
               description={player.position}
-              image={player.photo}
+              image={player.photo.small}
               id={player.id}
               selected="false"
               disabled="false"

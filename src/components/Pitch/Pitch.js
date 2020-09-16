@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import UserSessionContext from '../../contexts/UserSessionContext';
 import './Pitch.scss';
 
-import userPlayers from '../../data/test.userplayers.json';
+import userPlayers from '../../data/test.userplayers';
 
 const Pitch = () => {
 
@@ -57,7 +57,7 @@ const Pitch = () => {
 
     // (TODO: Extract to common share between TeamSheet/Pitch)
     let dragImage = new Image(); 
-    dragImage.src = player.photo;
+    dragImage.src = player.photo.small;
     e.dataTransfer.setDragImage(dragImage, 55, 55);
   };
 
@@ -79,7 +79,7 @@ const Pitch = () => {
 
     const stateClass =  (player) ? 'is-occupied' : '';
     const playerName =  (player) ? <span className="pitch__playername">{player.name}</span> : '';
-    const playerImage = (player) ? <img className="pitch__playerimage" src={player.photo} alt={player.name} /> : '';
+    const playerImage = (player) ? <img className="pitch__playerimage" src={player.photo.large} alt={player.name} width="90" height="90" /> : '';
     const dndProps =    (player) ? {...dropConfig, ...dragConfig(player)} : dropConfig;
 
     return <li className={stateClass} {...dndProps} key={i} data-positionid={i}>
