@@ -1,5 +1,7 @@
 import PickPlayersView from './views/PickPlayers';
 import SelectTacticsView from './views/SelectTactics';
+import SaveTeamView from './views/SaveTeam';
+import CompareTeamsView from './views/CompareTeams';
 
 const routes = [
     {
@@ -12,11 +14,11 @@ const routes = [
     },
     {
         path: '/save',
-        component: SelectTacticsView
+        component: SaveTeamView
     },
     {
         path: '/compare',
-        component: SelectTacticsView
+        component: CompareTeamsView
     }
 ];
 
