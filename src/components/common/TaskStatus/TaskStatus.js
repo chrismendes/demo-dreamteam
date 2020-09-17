@@ -8,6 +8,12 @@ const TaskStatus = (props) => {
   const backButton = ((props.active > 1) ?
       <Link to={task.links[0]} className="taskstatus__buttonback button">&lt; Back</Link>
   : '');
+  const forwardButton = ((props.active < props.tasks.length) ?
+    <React.Fragment>
+      <Link to={task.links[1]} className="taskstatus__buttonforward button">Continue &gt;</Link>
+      <button to={task.link} className="taskstatus__buttondisabled" disabled>Continue &gt;</button>
+    </React.Fragment>
+  : '');
   const taskComplete = (props.completeCriteria || (() => {}))
   const showCheckbox = (props.completeCriteria) ? true : false;
 
@@ -25,8 +31,7 @@ const TaskStatus = (props) => {
       </span>
       <span className="taskstatus__taskdesc">{task.description}</span>
       {backButton}
-      <Link to={task.links[1]} className="taskstatus__buttonforward button">Continue &gt;</Link>
-      <button to={task.link} className="taskstatus__buttondisabled" disabled>Continue &gt;</button>
+      {forwardButton}
     </div>
   );
 
