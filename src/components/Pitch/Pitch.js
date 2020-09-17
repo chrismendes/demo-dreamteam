@@ -2,14 +2,14 @@ import React, { useContext, useEffect } from 'react';
 import UserSessionContext from '../../contexts/UserSessionContext';
 import './Pitch.scss';
 
-import userPlayers from '../../data/test.userplayers';
+// import userPlayers from '../../data/test.userplayers';
 
 const Pitch = () => {
 
   const userSessionState = useContext(UserSessionContext);
   const [userFormation] = userSessionState.formation;
-  const [_, setUserPlayers] = userSessionState.players;
-  // const [userPlayers, setUserPlayers] = userSessionState.players;
+  // const [_, setUserPlayers] = userSessionState.players;
+  const [userPlayers, setUserPlayers] = userSessionState.players;
   const [userChecklist, setUserChecklist] = userSessionState.checklist;
 
   
@@ -46,8 +46,7 @@ const Pitch = () => {
   useEffect(() => {
     updateUserChecklist();
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [_]);
-  // }, [userPlayers]);
+  }, [userPlayers]);
 
 
   const handlePlayerDragOverPosition = (e) => {

@@ -3,15 +3,10 @@ import React, { useContext } from 'react';
 import SelectableCard from '../common/SelectableCard';
 import UserSessionContext from '../../contexts/UserSessionContext';
 
-import userPlayersTest from '../../data/test.userplayers';
-
 const TeamSheet = () => {
 
   const userSessionState = useContext(UserSessionContext);
-  // const [userPlayers] = userSessionState.players;
-  const [userPlayers, setUserPlayers] = userSessionState.players;
-console.warn('Error caused by temp setState TeamSheet:13');
-  setUserPlayers(userPlayersTest);
+  const [userPlayers] = userSessionState.players;
 
   const handlePlayerDragStart = (e, player) => {
     e.dataTransfer.setData('playerID', player.id); // (IE?) e.dataTransfer.setData('text/plain', playerID)
