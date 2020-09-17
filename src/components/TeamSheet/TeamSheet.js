@@ -1,15 +1,17 @@
-// import React, { useContext } from 'react';
-import React from 'react';
+import React, { useContext } from 'react';
+// import React from 'react';
 import SelectableCard from '../common/SelectableCard';
-// import UserSessionContext from '../../contexts/UserSessionContext';
+import UserSessionContext from '../../contexts/UserSessionContext';
 
-import userPlayers from '../../data/test.userplayers';
+import userPlayersTest from '../../data/test.userplayers';
 
 const TeamSheet = () => {
 
-  // const userSessionState = useContext(UserSessionContext);
+  const userSessionState = useContext(UserSessionContext);
   // const [userPlayers] = userSessionState.players;
-  
+  const [userPlayers, setUserPlayers] = userSessionState.players;
+  setUserPlayers(userPlayersTest);
+
   const handlePlayerDragStart = (e, player) => {
     e.dataTransfer.setData('playerID', player.id); // (IE?) e.dataTransfer.setData('text/plain', playerID)
 
@@ -41,7 +43,7 @@ const TeamSheet = () => {
               image={player.photo.small}
               id={player.id}
               selected="false"
-              disabled="false"
+              disabled={player.pitchPosition > -1}
               approved="false"
               error="false"
               updateFn={() => {}}
