@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
@@ -20,10 +20,15 @@ import userSessionDefaults from './contexts/userSessionDefaults';
 const App = () => {
 
   const userSessionState = {
-    checklist: useState(userSessionDefaults.appProgress),
-    formation: useState(userSessionDefaults.formation),
-    players:   useState(userSessionDefaults.players)
+    checklist: useState(JSON.parse(localStorage.getItem('checklist')) || userSessionDefaults.appProgress),
+    formation: useState(JSON.parse(localStorage.getItem('formation')) || userSessionDefaults.formation),
+    players:   useState(JSON.parse(localStorage.getItem('players')) || userSessionDefaults.players)
   };
+  useEffect(() => {
+    localStorage.setItem('checklist', JSON.stringify(userSessionState.checklist[0]));
+    localStorage.setItem('formation', JSON.stringify(userSessionState.formation[0]));
+    localStorage.setItem('players',   JSON.stringify(userSessionState.players[0]));
+  }, [userSessionState]);
 
   return (
     <Router>
