@@ -13,6 +13,11 @@ const tasks = [
         title: 'Save Your Team',
         description: 'Enter your first name and continue to review other submitted teams.',
         links: ['/tactics', '/compare']
+    },
+    {
+        title: 'Comapre Your Team',
+        description: 'Thank you for taking part.',
+        links: ['/tactics', null]
     }
 ];
 
