@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import UserSessionContext from '../../contexts/UserSessionContext';
 import './Pitch.scss';
 
@@ -10,6 +10,7 @@ const Pitch = () => {
   const [userFormation] = userSessionState.formation;
   const [_, setUserPlayers] = userSessionState.players;
   // const [userPlayers, setUserPlayers] = userSessionState.players;
+  const [userChecklist, setUserChecklist] = userSessionState.checklist;
 
   
   const setPositionHighlight = (el, on) => {
@@ -33,6 +34,20 @@ const Pitch = () => {
     updatedUserPlayers[playerIndex] = player;
     setUserPlayers(updatedUserPlayers);
   };
+
+
+  const updateUserChecklist = () => {
+    let updatedChecklist = [...userChecklist];
+    const playersOffPitch = userPlayers.filter(player => player.pitchPosition === undefined).length;
+    updatedChecklist[1] = (playersOffPitch === 0);
+    setUserChecklist(updatedChecklist);
+  };
+  
+  useEffect(() => {
+    updateUserChecklist();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [_]);
+  // }, [userPlayers]);
 
 
   const handlePlayerDragOverPosition = (e) => {
