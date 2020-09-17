@@ -44,7 +44,6 @@ const PlayerCatalogue = () => {
     }
 
     setUserPlayers(newPlayers);
-    updateUserChecklist();
   };
 
   const getPlayerCategoryStatus = (playerPosition) => {
@@ -99,7 +98,7 @@ const PlayerCatalogue = () => {
   useEffect(() => {
     updateUserChecklist();
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [userFormation]);
+  }, [userFormation, userPlayers]);
 
   const initCategoryTabs = () => {
     let tabs = [];
