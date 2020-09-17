@@ -8,9 +8,10 @@ const TaskStatus = (props) => {
   const backButton = ((props.active > 1) ?
       <Link to={task.links[0]} className="taskstatus__buttonback button">&lt; Back</Link>
   : '');
-  
+  const taskComplete = (props.completeCriteria || (() => {}))
+
   return (
-    <div className="taskstatus">
+    <div className={`taskstatus ${(taskComplete() === true) ? 'is-completed' : ''}`}>
       <span className="taskstatus__pre">Task {props.active}/{props.tasks.length}</span>
       <span className="taskstatus__taskname">
         <span className="taskstatus__checkboxoff material-icons">check_box_outline_blank</span>
