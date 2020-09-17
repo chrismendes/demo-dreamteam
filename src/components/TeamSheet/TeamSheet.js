@@ -10,6 +10,7 @@ const TeamSheet = () => {
   const userSessionState = useContext(UserSessionContext);
   // const [userPlayers] = userSessionState.players;
   const [userPlayers, setUserPlayers] = userSessionState.players;
+console.error('Error caused by temp setState TeamSheet:13');
   setUserPlayers(userPlayersTest);
 
   const handlePlayerDragStart = (e, player) => {
