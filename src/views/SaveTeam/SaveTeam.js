@@ -14,7 +14,7 @@ const SaveTeamView = () => {
 
   const appConfig = useContext(AppConfigContext);
   const userSession = useContext(UserSessionContext);
-  const taskCompleteCriteria = () => [...userSession.checklist][0][0] === true;
+  const taskCompleteCriteria = () => [...userSession.checklist][0][2] === true;
 
   return (
     <React.Fragment>

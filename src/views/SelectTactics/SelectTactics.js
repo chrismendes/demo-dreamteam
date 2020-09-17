@@ -19,9 +19,9 @@ import TeamSheet from '../../components/TeamSheet';
 const SelectTacticsView = () => {
 
   const appConfig = useContext(AppConfigContext);
-
   const userSessionState = useContext(UserSessionContext);
   const [userChecklist] = userSessionState.checklist;
+  const taskCompleteCriteria = () => [...userSessionState.checklist][0][1] === true;
 
   return (
     <React.Fragment>
@@ -31,7 +31,7 @@ const SelectTacticsView = () => {
       } */}
 
       <LayoutPageHeader>
-      <TaskStatus tasks={appConfig.tasks} active="2" />
+      <TaskStatus tasks={appConfig.tasks} active="2" completeCriteria={taskCompleteCriteria} />
         <ProgressBar steps={appConfig.progressBarSteps} active="2" />
       </LayoutPageHeader>
 

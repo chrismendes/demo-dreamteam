@@ -15,8 +15,8 @@ import PlayerCatalogue from '../../components/PlayerCatalogue';
 const PickPlayersView = () => {
 
   const appConfig = useContext(AppConfigContext);
-  const userSession = useContext(UserSessionContext);
-  const taskCompleteCriteria = () => [...userSession.checklist][0][0] === true;
+  const userSessionState = useContext(UserSessionContext);
+  const taskCompleteCriteria = () => [...userSessionState.checklist][0][0] === true;
 
   return (
     <React.Fragment>
