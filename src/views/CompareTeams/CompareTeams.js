@@ -9,7 +9,7 @@ import TaskStatus from '../../components/common/TaskStatus';
 import ProgressBar from '../../components/common/ProgressBar';
 
 
-const CompareTeams = () => {
+const CompareTeamsView = () => {
 
   const appConfig = useContext(AppConfigContext);
 
@@ -31,4 +31,4 @@ const CompareTeams = () => {
   );
 };
 
-export default CompareTeams;
+export default CompareTeamsView;

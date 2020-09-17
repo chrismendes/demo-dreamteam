@@ -16,7 +16,7 @@ import Pitch from '../../components/Pitch';
 import TeamSheet from '../../components/TeamSheet';
 
 
-const SelectTactics = () => {
+const SelectTacticsView = () => {
 
   const appConfig = useContext(AppConfigContext);
 
@@ -53,4 +53,4 @@ const SelectTactics = () => {
   );
 };
 
-export default SelectTactics;
+export default SelectTacticsView;
