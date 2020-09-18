@@ -26,7 +26,7 @@ const CompareTeamsView = () => {
  
 
   useEffect(() => {
-    const fetchTeams = async() => {
+    const fetchTeamData = async() => {
       const snapshot = await firestore.collection('teams').get();
       const rawData = snapshot.docs.map(doc => { return { ...doc.data() }; });
 
@@ -40,7 +40,7 @@ const CompareTeamsView = () => {
       setTableData(tableDataIn);
       setPitchData(pitchDataIn);
     }
-    fetchTeams();
+    fetchTeamData();
   }, []);
 
 
