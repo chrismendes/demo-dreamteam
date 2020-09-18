@@ -31,7 +31,7 @@ const SelectTacticsView = () => {
       } */}
 
       <LayoutPageHeader>
-      <TaskStatus tasks={appConfig.tasks} active="2" completeCriteria={taskCompleteCriteria} />
+        <TaskStatus tasks={appConfig.tasks} active="2" completeCriteria={taskCompleteCriteria} />
         <ProgressBar steps={appConfig.progressBarSteps} active="2" />
       </LayoutPageHeader>
 
