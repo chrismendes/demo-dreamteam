@@ -41,6 +41,7 @@
 .pitch__playerimage,
 .pitch__playername {
     display: none;
+    user-select: none;
 }
 
 .pitch > li.is-occupied {
