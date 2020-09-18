@@ -2,16 +2,16 @@ import React, { useContext, useEffect } from 'react';
 import UserSessionContext from '../../contexts/UserSessionContext';
 import './Pitch.scss';
 
-// import userPlayers from '../../data/test.userplayers';
-
-const Pitch = () => {
+const Pitch = (props) => {
 
   const userSessionState = useContext(UserSessionContext);
-  const [userFormation] = userSessionState.formation;
-  // const [_, setUserPlayers] = userSessionState.players;
-  const [userPlayers, setUserPlayers] = userSessionState.players;
+  // const [userFormation] = userSessionState.formation;
+  
   const [userChecklist, setUserChecklist] = userSessionState.checklist;
-
+  const players = props.team;
+  const formation = props.formation;
+  const updatePlayers = props.update;
+  const readOnly = (props.readonly || false);
   
   const setPositionHighlight = (el, on) => {
     if(on === true)  el.classList.add('is-highlighted');
@@ -20,25 +20,25 @@ const Pitch = () => {
 
 
   const addPlayerToPitch = (positionID, playerID) => {
-    let updatedUserPlayers = [...userPlayers];
-    const playerIndex = userPlayers.findIndex((p) => p.id === playerID);
-    let player = userPlayers[playerIndex];
+    let updatedUserPlayers = [...players];
+    const playerIndex = players.findIndex((p) => p.id === playerID);
+    let player = players[playerIndex];
 
     // Remove any existing player in position
-    const replacePlayerIndex = userPlayers.findIndex((p) => p.pitchPosition === positionID);
+    const replacePlayerIndex = players.findIndex((p) => p.pitchPosition === positionID);
     if(replacePlayerIndex > -1) {
       delete updatedUserPlayers[replacePlayerIndex].pitchPosition;
     }
 
     player.pitchPosition = positionID;
     updatedUserPlayers[playerIndex] = player;
-    setUserPlayers(updatedUserPlayers);
+    updatePlayers(updatedUserPlayers);
   };
 
 
   const updateUserChecklist = () => {
     let updatedChecklist = [...userChecklist];
-    const playersOffPitch = userPlayers.filter(player => player.pitchPosition === undefined).length;
+    const playersOffPitch = players.filter(player => player.pitchPosition === undefined).length;
     updatedChecklist[1] = (playersOffPitch === 0);
     setUserChecklist(updatedChecklist);
   };
@@ -46,7 +46,7 @@ const Pitch = () => {
   useEffect(() => {
     updateUserChecklist();
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [userPlayers]);
+  }, [players]);
 
 
   const handlePlayerDragOverPosition = (e) => {
@@ -89,12 +89,12 @@ const Pitch = () => {
   };
 
   const pitchPositions = [...new Array(11)].map((_, i) => {
-    const player = userPlayers.filter(player => player.pitchPosition === i)[0];
+    const player = players.filter(player => player.pitchPosition === i)[0];
 
     const stateClass =  (player) ? 'is-occupied' : '';
     const playerName =  (player) ? <span className="pitch__playername">{player.name}</span> : '';
     const playerImage = (player) ? <img className="pitch__playerimage" src={player.photo.large} alt={player.name} width="90" height="90" /> : '';
-    const dndProps =    (player) ? {...dropConfig, ...dragConfig(player)} : dropConfig;
+    const dndProps =    (!readOnly ? ((player) ? {...dropConfig, ...dragConfig(player)} : dropConfig) : {});
 
     return <li className={stateClass} {...dndProps} key={i} data-positionid={i}>
       {playerImage}
@@ -103,7 +103,7 @@ const Pitch = () => {
   });
 
   return (
-      <ul className={`pitch pitch-${userFormation.id}`} data-testid="Pitch">
+      <ul className={`pitch pitch-${formation.id}`} data-testid="Pitch">
         {pitchPositions}
       </ul>
   );

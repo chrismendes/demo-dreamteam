@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Redirect } from 'react-router-dom';
+// import { Redirect } from 'react-router-dom';
 
 import AppConfigContext from '../../contexts/AppConfigContext';
 import UserSessionContext from '../../contexts/UserSessionContext';
@@ -20,7 +20,9 @@ const SelectTacticsView = () => {
 
   const appConfig = useContext(AppConfigContext);
   const userSessionState = useContext(UserSessionContext);
-  const [userChecklist] = userSessionState.checklist;
+  const [userPlayers, setUserPlayers] = userSessionState.players;
+  const [userFormation] = userSessionState.formation;
+  // const [userChecklist] = userSessionState.checklist;
   const taskCompleteCriteria = () => [...userSessionState.checklist][0][1] === true;
 
   return (
@@ -43,7 +45,7 @@ const SelectTacticsView = () => {
           </LayoutTwoColumnsSide>
 
           <LayoutTwoColumnsMain>
-            <Pitch />
+            <Pitch team={userPlayers} update={setUserPlayers} formation={userFormation} />
           </LayoutTwoColumnsMain>
 
         </LayoutTwoColumns>
