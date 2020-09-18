@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-// import React from 'react';
 import SelectableCard from '../common/SelectableCard';
 import UserSessionContext from '../../contexts/UserSessionContext';
 
