@@ -1,0 +1,54 @@
+.selectabletable {
+    user-select: none;
+}
+
+.selectabletable__cols {
+    padding: 0 14px;
+}
+.selectabletable__cols > span {
+    display: inline-block;
+
+    font-size: 0.8em;
+    color: #666666;
+    text-transform: uppercase;
+}
+
+.selectabletable__rows {
+    list-style: none;
+
+    padding: 0;
+    height: 100%;
+
+    background: #ffffff;
+    box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.1);
+}
+.selectabletable__rows > li > span {
+    display: inline-block;
+}
+
+.selectabletable__rows > li {
+    display: inline-block;
+    width: 100%;
+    margin: 0;
+    padding: 10px 14px;
+
+    cursor: pointer;
+}
+
+.selectabletable__cols > span:first-child,
+.selectabletable__rows > li > span:first-child {
+    width: 60%;
+}
+
+.selectabletable__rows > li.is-highlighted {
+    font-weight: bold;;
+}
+.selectabletable__rows > li.is-selected,
+.selectabletable__rows > li.is-selected:hover {
+    color: #ffffff;
+    background: linear-gradient(to bottom, #239de9, #0D85D1);
+    cursor: default;
+}
+.selectabletable__rows > li:hover {
+    color: #0D85D1;
+}

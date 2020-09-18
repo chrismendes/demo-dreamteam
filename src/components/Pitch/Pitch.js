@@ -8,11 +8,11 @@ const Pitch = (props) => {
   // const [userFormation] = userSessionState.formation;
   
   const [userChecklist, setUserChecklist] = userSessionState.checklist;
-  const players = props.team;
+  const players = props.players;
   const formation = props.formation;
   const updatePlayers = props.update;
   const readOnly = (props.readonly || false);
-  
+
   const setPositionHighlight = (el, on) => {
     if(on === true)  el.classList.add('is-highlighted');
     if(on === false) el.classList.remove('is-highlighted');

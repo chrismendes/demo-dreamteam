@@ -45,7 +45,7 @@ const SelectTacticsView = () => {
           </LayoutTwoColumnsSide>
 
           <LayoutTwoColumnsMain>
-            <Pitch team={userPlayers} update={setUserPlayers} formation={userFormation} />
+            <Pitch players={userPlayers} update={setUserPlayers} formation={userFormation} />
           </LayoutTwoColumnsMain>
 
         </LayoutTwoColumns>

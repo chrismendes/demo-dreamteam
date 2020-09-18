@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { firestore } from '../../firebase';
 
 import AppConfigContext from '../../contexts/AppConfigContext';
@@ -19,15 +19,30 @@ import Pitch from '../../components/Pitch';
 const CompareTeamsView = () => {
 
   const appConfig = useContext(AppConfigContext);
-  const [userTeamsTable, setUserTeamsTable] = useState([]);
 
-  const fetchUsers = async () => {
-    const snapshot = await firestore.collection('teams').get();
-    const teams = snapshot.docs.map(doc => { return { id: doc.id, ...doc.data() }; });
-// console.log(teams);
-    setUserTeamsTable(teams);
-  };
-  fetchUsers();
+  const tableCols = [ 'First Name', 'Formation' ];
+  const [tableData, setTableData] = useState([]);
+  const [pitchData, setPitchData] = useState([]);
+ 
+
+  useEffect(() => {
+    const fetchTeams = async() => {
+      const snapshot = await firestore.collection('teams').get();
+      const rawData = snapshot.docs.map(doc => { return { ...doc.data() }; });
+
+      const tableDataIn = [];
+      const pitchDataIn = [];
+
+      rawData.forEach((team) => {
+        tableDataIn.push({ userName: team.userName, formation: team.formation.title });
+        pitchDataIn.push({ players: team.players, formation: team.formation });
+      });
+      setTableData(tableDataIn);
+      setPitchData(pitchDataIn);
+    }
+    fetchTeams();
+  }, []);
+
 
   return (
     <React.Fragment>
@@ -40,13 +55,19 @@ const CompareTeamsView = () => {
       <LayoutSection altColourFirst="true">
         <LayoutTwoColumns>
 
-          <LayoutTwoColumnsSide>
-            <SelectableTable />
-          </LayoutTwoColumnsSide>
+          { (tableData.length && pitchData.length) ?
+            (
+              <React.Fragment>
+                <LayoutTwoColumnsSide>
+                  <SelectableTable rows={tableData} cols={tableCols} />
+                </LayoutTwoColumnsSide>
 
-          <LayoutTwoColumnsMain>
-            <Pitch team={userTeamsTable} formation={'442d'} readonly="true"/>
-          </LayoutTwoColumnsMain>
+                <LayoutTwoColumnsMain>
+                  <Pitch players={pitchData[0].players} formation={pitchData[0].formation} readonly="true"/>
+                </LayoutTwoColumnsMain>
+              </React.Fragment>
+            ) : ''
+          }
 
         </LayoutTwoColumns>
       </LayoutSection>
