@@ -23,6 +23,8 @@ const CompareTeamsView = () => {
   const tableCols = [ 'First Name', 'Formation' ];
   const [tableData, setTableData] = useState([]);
   const [pitchData, setPitchData] = useState([]);
+  
+  const [selectedTeam, setSelectedTeam] = useState(0);
  
 
   useEffect(() => {
@@ -59,11 +61,11 @@ const CompareTeamsView = () => {
             (
               <React.Fragment>
                 <LayoutTwoColumnsSide>
-                  <SelectableTable rows={tableData} cols={tableCols} />
+                  <SelectableTable rows={tableData} cols={tableCols} updateFn={setSelectedTeam} />
                 </LayoutTwoColumnsSide>
 
                 <LayoutTwoColumnsMain>
-                  <Pitch players={pitchData[0].players} formation={pitchData[0].formation} readonly="true"/>
+                  <Pitch players={pitchData[selectedTeam].players} formation={pitchData[selectedTeam].formation} readonly="true"/>
                 </LayoutTwoColumnsMain>
               </React.Fragment>
             ) : ''
