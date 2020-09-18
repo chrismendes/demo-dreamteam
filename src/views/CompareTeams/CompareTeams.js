@@ -13,7 +13,7 @@ import TaskStatus from '../../components/common/TaskStatus';
 import ProgressBar from '../../components/common/ProgressBar';
 import SelectableTable from '../../components/common/SelectableTable';
 import Pitch from '../../components/Pitch';
-// import SaveForm from '../../components/SaveForm';
+import '../../components/common/LoadingSpinner/LoadingSpinner.scss';
 
 
 const CompareTeamsView = () => {
@@ -57,19 +57,20 @@ const CompareTeamsView = () => {
       <LayoutSection altColourFirst="true">
         <LayoutTwoColumns>
 
-          { (tableData.length && pitchData.length) ?
-            (
-              <React.Fragment>
-                <LayoutTwoColumnsSide>
-                  <SelectableTable rows={tableData} cols={tableCols} updateFn={setSelectedTeam} />
-                </LayoutTwoColumnsSide>
-
-                <LayoutTwoColumnsMain>
-                  <Pitch players={pitchData[selectedTeam].players} formation={pitchData[selectedTeam].formation} readonly="true"/>
-                </LayoutTwoColumnsMain>
-              </React.Fragment>
-            ) : ''
-          }
+          <React.Fragment>
+            <LayoutTwoColumnsSide>
+              {
+                (tableData.length && pitchData.length) ?
+                  <SelectableTable rows={tableData} cols={tableCols} updateFn={setSelectedTeam} /> : <SelectableTable />
+              }
+            </LayoutTwoColumnsSide>
+            <LayoutTwoColumnsMain>
+              {
+                (tableData.length && pitchData.length) ?
+                  <Pitch players={pitchData[selectedTeam].players} formation={pitchData[selectedTeam].formation} readonly="true"/> : <Pitch />
+              }                  
+            </LayoutTwoColumnsMain>
+          </React.Fragment>
 
         </LayoutTwoColumns>
       </LayoutSection>

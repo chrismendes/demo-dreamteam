@@ -3,8 +3,8 @@ import './SelectableTable.scss';
 
 const SelectableTable = (props) => {
 
-  const rowData = props.rows;
-  const columnLabels = props.cols;
+  const rowData = props.rows || [];
+  const columnLabels = props.cols || [];
   const updateExternally = props.updateFn || null;
 
   const [selectedRow, setSelectedRow] = useState(0);

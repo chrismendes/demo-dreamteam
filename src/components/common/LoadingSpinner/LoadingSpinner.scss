@@ -1,0 +1,21 @@
+.is-loading:after {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    z-index: 9;
+    top: 46%;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    margin-top: -50px;
+    margin-left: -50px;
+    border-radius: 50%;
+    border: 8px solid transparent;
+    border-top-color: #ffffff;
+    border-bottom-color: #ffffff;
+    animation: spinner 1s ease infinite;
+}
+
+@keyframes spinner {
+    to {transform: rotate(360deg);}
+}

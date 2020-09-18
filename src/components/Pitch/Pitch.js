@@ -8,8 +8,8 @@ const Pitch = (props) => {
   // const [userFormation] = userSessionState.formation;
   
   const [userChecklist, setUserChecklist] = userSessionState.checklist;
-  const players = props.players;
-  const formation = props.formation;
+  const players = props.players || [];
+  const formation = props.formation || null;
   const updatePlayers = props.update;
   const readOnly = (props.readonly || false);
 
@@ -44,7 +44,7 @@ const Pitch = (props) => {
   };
   
   useEffect(() => {
-    updateUserChecklist();
+    if(players.length) updateUserChecklist();
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [players]);
 
@@ -103,7 +103,7 @@ const Pitch = (props) => {
   });
 
   return (
-      <ul className={`pitch pitch-${formation.id}`} data-testid="Pitch">
+      <ul className={`pitch ${formation ? `pitch-${formation.id}` : ''} ${!players.length ? `is-loading` : ''}`} data-testid="Pitch">
         {pitchPositions}
       </ul>
   );
