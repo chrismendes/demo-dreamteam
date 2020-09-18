@@ -13,7 +13,7 @@ const SelectableTable = (props) => {
 
   const rowListItems = rowData.map((row, i) => {
     return (
-      <li key={i}>
+      <li key={i} className={(i === 0 ? 'is-selected' : '')}>
         <span>{row.userName}</span>
         <span>{row.formation}</span>
       </li>
