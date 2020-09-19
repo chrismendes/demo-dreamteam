@@ -20,7 +20,7 @@ const CompareTeamsView = () => {
 
   const appConfig = useContext(AppConfigContext);
 
-  const tableCols = [ 'First Name', 'Formation' ];
+  const tableCols = [ 'First Name', 'Date' ];
   const [tableData, setTableData] = useState([]);
   const [pitchData, setPitchData] = useState([]);
   
@@ -36,7 +36,7 @@ const CompareTeamsView = () => {
       const pitchDataIn = [];
 
       rawData.forEach((team) => {
-        tableDataIn.push({ userName: team.userName, formation: team.formation.title });
+        tableDataIn.push({ userName: team.userName, date: team.date });
         pitchDataIn.push({ players: team.players, formation: team.formation });
       });
       setTableData(tableDataIn);

@@ -3,11 +3,10 @@
 }
 
 .selectabletable__cols {
-    padding: 0 14px;
+    display: flex;
+    justify-content: space-between;
 }
 .selectabletable__cols > span {
-    display: inline-block;
-
     font-size: 0.8em;
     color: #666666;
     text-transform: uppercase;
@@ -16,6 +15,8 @@
 .selectabletable__rows {
     list-style: none;
 
+    display: flex;
+    flex-direction: column;
     padding: 0;
     height: 100%;
 
@@ -27,17 +28,20 @@
 }
 
 .selectabletable__rows > li {
-    display: inline-block;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
     width: 100%;
     margin: 0;
-    padding: 10px 14px;
+    padding: 10px 0;
 
     cursor: pointer;
 }
 
-.selectabletable__cols > span:first-child,
-.selectabletable__rows > li > span:first-child {
-    width: 60%;
+.selectabletable__cols > span,
+.selectabletable__rows > li > span {
+    padding: 0 14px;
 }
 
 .selectabletable__rows > li.is-highlighted {

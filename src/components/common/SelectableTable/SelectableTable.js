@@ -18,7 +18,7 @@ const SelectableTable = (props) => {
     return (
       <li key={i} className={(i === selectedRow ? 'is-selected' : '')} onClick={() => { selectRow(i) }}>
         <span>{row.userName}</span>
-        <span>{row.formation}</span>
+        <span>{row.date.toDate().toLocaleDateString()}</span>
       </li>
     );
   });
