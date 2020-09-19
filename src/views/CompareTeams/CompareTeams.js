@@ -20,7 +20,7 @@ const CompareTeamsView = () => {
 
   const appConfig = useContext(AppConfigContext);
 
-  const tableCols = [ 'First Name', 'Date' ];
+  const tableCols = [ 'User Name', 'Date' ];
   const [tableData, setTableData] = useState([]);
   const [pitchData, setPitchData] = useState([]);
   
