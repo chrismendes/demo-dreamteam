@@ -108,213 +108,213 @@ const players = [
 	},
 	{
 		"id": 16,
+		"name": "Olivier Giroud",
+		"club": "Chelsea",
+		"position": "FWD",
+		"photo": { 'large': images.players['45'].large, 'small': images.players['45'].small }
+	},
+	{
+		"id": 17,
 		"name": "Patrick van Aanholt",
 		"club": "Crystal Palace",
 		"position": "DEF",
 		"photo": { 'large': images.players['16'].large, 'small': images.players['16'].small }
 	},
 	{
-		"id": 17,
+		"id": 18,
 		"name": "Vicente Guaita",
 		"club": "Crystal Palace",
 		"position": "GK",
 		"photo": { 'large': images.players['17'].large, 'small': images.players['17'].small }
 	},
 	{
-		"id": 18,
+		"id": 19,
 		"name": "Wilfried Zaha",
 		"club": "Crystal Palace",
 		"position": "FWD",
 		"photo": { 'large': images.players['18'].large, 'small': images.players['18'].small }
 	},
 	{
-		"id": 19,
+		"id": 20,
 		"name": "André Gomes",
 		"club": "Everton",
 		"position": "MID",
 		"photo": { 'large': images.players['19'].large, 'small': images.players['19'].small }
 	},
 	{
-		"id": 20,
+		"id": 21,
 		"name": "Dominic Calvert-Lewin",
 		"club": "Everton",
 		"position": "FWD",
 		"photo": { 'large': images.players['20'].large, 'small': images.players['20'].small }
 	},
 	{
-		"id": 21,
+		"id": 22,
 		"name": "Gylfi Sigurdsson",
 		"club": "Everton",
 		"position": "MID",
 		"photo": { 'large': images.players['21'].large, 'small': images.players['21'].small }
 	},
 	{
-		"id": 22,
+		"id": 23,
 		"name": "Jordan Pickford",
 		"club": "Everton",
 		"position": "GK",
 		"photo": { 'large': images.players['22'].large, 'small': images.players['22'].small }
 	},
 	{
-		"id": 23,
+		"id": 24,
 		"name": "Lucas Digne",
 		"club": "Everton",
 		"position": "DEF",
 		"photo": { 'large': images.players['23'].large, 'small': images.players['23'].small }
 	},
 	{
-		"id": 24,
+		"id": 25,
 		"name": "James Maddison",
 		"club": "Leicester City",
 		"position": "MID",
 		"photo": { 'large': images.players['25'].large, 'small': images.players['25'].small }
 	},
 	{
-		"id": 25,
+		"id": 26,
 		"name": "Jamie Vardy",
 		"club": "Leicester City",
 		"position": "FWD",
 		"photo": { 'large': images.players['26'].large, 'small': images.players['26'].small }
 	},
 	{
-		"id": 26,
+		"id": 27,
 		"name": "Kasper Schmeichel",
 		"club": "Leicester City",
 		"position": "GK",
 		"photo": { 'large': images.players['28'].large, 'small': images.players['28'].small }
 	},
 	{
-		"id": 27,
+		"id": 28,
 		"name": "Çaglar Söyüncü",
 		"club": "Leicester City",
 		"position": "DEF",
 		"photo": { 'large': images.players['29'].large, 'small': images.players['29'].small }
 	},
 	{
-		"id": 28,
+		"id": 29,
 		"name": "Alisson",
 		"club": "Liverpool",
 		"position": "GK",
 		"photo": { 'large': images.players['30'].large, 'small': images.players['30'].small }
 	},
 	{
-		"id": 29,
+		"id": 30,
 		"name": "Andrew Robertson",
 		"club": "Liverpool",
 		"position": "DEF",
 		"photo": { 'large': images.players['27'].large, 'small': images.players['27'].small }
 	},
 	{
-		"id": 30,
+		"id": 31,
 		"name": "Fabinho",
 		"club": "Liverpool",
 		"position": "MID",
 		"photo": { 'large': images.players['31'].large, 'small': images.players['31'].small }
 	},
 	{
-		"id": 31,
+		"id": 32,
 		"name": "Jordan Henderson",
 		"club": "Liverpool",
 		"position": "MID",
 		"photo": { 'large': images.players['33'].large, 'small': images.players['33'].small }
 	},
 	{
-		"id": 32,
+		"id": 33,
 		"name": "Mohamed Salah",
 		"club": "Liverpool",
 		"position": "FWD",
 		"photo": { 'large': images.players['34'].large, 'small': images.players['34'].small }
 	},
 	{
-		"id": 33,
+		"id": 34,
 		"name": "Sadio Mané",
 		"club": "Liverpool",
 		"position": "FWD",
 		"photo": { 'large': images.players['35'].large, 'small': images.players['35'].small }
 	},
 	{
-		"id": 34,
+		"id": 35,
 		"name": "Trent Alexander-Arnold",
 		"club": "Liverpool",
 		"position": "DEF",
 		"photo": { 'large': images.players['36'].large, 'small': images.players['36'].small }
 	},
 	{
-		"id": 35,
+		"id": 36,
 		"name": "Virgil van Dijk",
 		"club": "Liverpool",
 		"position": "DEF",
 		"photo": { 'large': images.players['37'].large, 'small': images.players['37'].small }
 	},
 	{
-		"id": 36,
+		"id": 37,
 		"name": "Thiago Alcântara",
 		"club": "Liverpool",
 		"position": "MID",
 		"photo": { 'large': images.players['38'].large, 'small': images.players['38'].small }
 	},
 	{
-		"id": 37,
+		"id": 38,
 		"name": "Ederson",
 		"club": "Manchester City",
 		"position": "GK",
 		"photo": { 'large': images.players['39'].large, 'small': images.players['39'].small }
 	},
 	{
-		"id": 38,
+		"id": 39,
 		"name": "Gabriel Jesus",
 		"club": "Manchester City",
 		"position": "FWD",
 		"photo": { 'large': images.players['40'].large, 'small': images.players['40'].small }
 	},
 	{
-		"id": 39,
+		"id": 40,
 		"name": "Bernardo Silva",
 		"club": "Manchester City",
 		"position": "MID",
 		"photo": { 'large': images.players['24'].large, 'small': images.players['24'].small }
 	},
 	{
-		"id": 40,
+		"id": 41,
 		"name": "Fernandinho",
 		"club": "Manchester City",
 		"position": "MID",
 		"photo": { 'large': images.players['32'].large, 'small': images.players['32'].small }
 	},
 	{
-		"id": 41,
+		"id": 42,
 		"name": "Kevin De Bruyne",
 		"club": "Manchester City",
 		"position": "MID",
 		"photo": { 'large': images.players['41'].large, 'small': images.players['41'].small }
 	},
 	{
-		"id": 42,
+		"id": 43,
 		"name": "Kyle Walker",
 		"club": "Manchester City",
 		"position": "DEF",
 		"photo": { 'large': images.players['42'].large, 'small': images.players['42'].small }
 	},
 	{
-		"id": 43,
+		"id": 44,
 		"name": "Nicolás Otamendi",
 		"club": "Manchester City",
 		"position": "DEF",
 		"photo": { 'large': images.players['43'].large, 'small': images.players['43'].small }
 	},
 	{
-		"id": 44,
+		"id": 45,
 		"name": "Raheem Sterling",
 		"club": "Manchester City",
 		"position": "FWD",
 		"photo": { 'large': images.players['44'].large, 'small': images.players['44'].small }
-	},
-	{
-		"id": 45,
-		"name": "Riyad Mahrez",
-		"club": "Manchester City",
-		"position": "FWD",
-		"photo": { 'large': images.players['45'].large, 'small': images.players['45'].small }
 	},
 	{
 		"id": 46,
