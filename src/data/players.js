@@ -87,7 +87,7 @@ const players = [
 	},
 	{
 		"id": 13,
-		"name": "Kurt Zouma",
+		"name": "Thiago Silva",
 		"club": "Chelsea",
 		"position": "DEF",
 		"photo": { 'large': images.players['13'].large, 'small': images.players['13'].small }
