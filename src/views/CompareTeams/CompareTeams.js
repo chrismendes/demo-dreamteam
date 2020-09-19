@@ -15,6 +15,8 @@ import SelectableTable from '../../components/common/SelectableTable';
 import Pitch from '../../components/Pitch';
 import '../../components/common/LoadingSpinner/LoadingSpinner.scss';
 
+import './CompareTeams.scss';
+
 
 const CompareTeamsView = () => {
 
@@ -47,7 +49,7 @@ const CompareTeamsView = () => {
 
 
   return (
-    <React.Fragment>
+    <div className="v-compareteams">
 
       <LayoutPageHeader>
         <TaskStatus tasks={appConfig.tasks} active="4" />
@@ -75,7 +77,7 @@ const CompareTeamsView = () => {
         </LayoutTwoColumns>
       </LayoutSection>
 
-    </React.Fragment>
+    </div>
   );
 };
 
