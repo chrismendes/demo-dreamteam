@@ -1,0 +1,32 @@
+.tickoverlay.is-complete {
+    position: relative;
+}
+.tickoverlay.is-complete:after {
+    content: 'done';
+    font-family: 'Material Icons';
+    font-size: 100px;
+    line-height: 1em;
+    color: #ffffff;
+    background: #3aac5d;
+    border-radius: 100%;
+    padding: 12px 32px 28px 8px;
+    z-index: 9;
+    top: 50%;
+    left: 50%;
+    width: 80px;
+    height: 80px;
+    margin-top: -60px;
+    margin-left: -60px;
+    position: absolute;
+}
+.tickoverlay.is-complete:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background: #000000;
+    opacity: 0.2;
+}

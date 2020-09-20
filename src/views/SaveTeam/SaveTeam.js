@@ -8,6 +8,7 @@ import LayoutSection from '../../layouts/Section';
 
 import TaskStatus from '../../components/common/TaskStatus';
 import ProgressBar from '../../components/common/ProgressBar';
+import SaveForm from '../../components/SaveForm';
 
 
 const SaveTeamView = () => {
@@ -24,10 +25,8 @@ const SaveTeamView = () => {
         <ProgressBar steps={appConfig.progressBarSteps} active="3" />
       </LayoutPageHeader>
 
-      <LayoutSection>
-      </LayoutSection>
-
-      <LayoutSection>
+      <LayoutSection altColourFirst="true">
+        <SaveForm />
       </LayoutSection>
 
     </React.Fragment>

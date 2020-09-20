@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import UserSessionContext from '../../contexts/UserSessionContext';
 import './Pitch.scss';
+import '../../components/common/LoadingOverlay/LoadingOverlay.scss';
 
 const Pitch = (props) => {
 
@@ -103,7 +104,7 @@ const Pitch = (props) => {
   });
 
   return (
-      <ul className={`pitch ${formation ? `pitch-${formation.id}` : ''} ${!players.length ? `is-loading` : ''}`} data-testid="Pitch">
+      <ul className={`pitch ${formation ? `pitch-${formation.id}` : ''} ${!players.length ? `is-loading` : ''} loadingoverlay`} data-testid="Pitch">
         {pitchPositions}
       </ul>
   );

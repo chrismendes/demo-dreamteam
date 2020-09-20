@@ -1,0 +1,28 @@
+.saveform {
+    width: 600px;
+    margin: 0 auto;
+    padding: 60px;
+
+    background: #ffffff;
+    box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.1);
+}
+
+.saveform > input[type=text] {
+    margin: 20px 0;
+    font-size: 1.6em;
+}
+
+.saveform > button {
+    background: #a00500;
+    margin: 0;
+}
+
+.saveform.is-loading,
+.saveform.is-complete {
+    color: #c0c0c0;
+}
+.saveform.is-loading > input[type=text],
+.saveform.is-complete > input[type=text] {
+    border-color: #dfdfdf;
+    background: #f7f7f7;
+}

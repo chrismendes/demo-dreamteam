@@ -13,7 +13,6 @@ import TaskStatus from '../../components/common/TaskStatus';
 import ProgressBar from '../../components/common/ProgressBar';
 import SelectableTable from '../../components/common/SelectableTable';
 import Pitch from '../../components/Pitch';
-import '../../components/common/LoadingSpinner/LoadingSpinner.scss';
 
 import './CompareTeams.scss';
 

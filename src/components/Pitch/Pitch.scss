@@ -109,26 +109,14 @@
 // ---
 // Loading
 // ---
-.pitch.is-loading > li {
+.pitch.loadingoverlay.is-loading > li {
     display: none;
 }
-.pitch.is-loading:after {
-    width: 100px;
-    height: 100px;
-    margin-top: -50px;
-    margin-left: -50px;
+.pitch.loadingoverlay.is-loading:after {
     border-top-color: #ffffff;
     border-bottom-color: #ffffff;
 }
-.pitch.is-loading:before {
-    content: '';
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    background: #000000;
+.pitch.loadingoverlay.is-loading:before {
     opacity: 0.6;
 }
 
