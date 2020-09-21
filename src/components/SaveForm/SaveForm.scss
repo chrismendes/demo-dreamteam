@@ -12,9 +12,11 @@
     font-size: 1.6em;
 }
 
-.saveform > button {
-    background: #a00500;
+.saveform > input[type=submit] {
     margin: 0;
+}
+.saveform > input[type=submit]:not([disabled]) {
+    background: #a00500;
 }
 
 .saveform.is-loading,

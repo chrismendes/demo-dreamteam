@@ -20,14 +20,20 @@ import userSessionDefaults from './contexts/userSessionDefaults';
 const App = () => {
 
   const userSessionState = {
-    checklist: useState(JSON.parse(localStorage.getItem('checklist')) || userSessionDefaults.appProgress),
-    formation: useState(JSON.parse(localStorage.getItem('formation')) || userSessionDefaults.formation),
-    players:   useState(JSON.parse(localStorage.getItem('players')) || userSessionDefaults.players)
+    checklist:  useState(JSON.parse(localStorage.getItem('checklist')) || userSessionDefaults.appProgress),
+    formation:  useState(JSON.parse(localStorage.getItem('formation')) || userSessionDefaults.formation),
+    players:    useState(JSON.parse(localStorage.getItem('players')) || userSessionDefaults.players),
+    userName:   useState(JSON.parse(localStorage.getItem('userName')) || userSessionDefaults.userName),
+    dbRef:      useState(JSON.parse(localStorage.getItem('dbRef')) || userSessionDefaults.dbRef),
+    dataString: useState(JSON.parse(localStorage.getItem('dataString')) || userSessionDefaults.dataString)
   };
   useEffect(() => {
-    localStorage.setItem('checklist', JSON.stringify(userSessionState.checklist[0]));
-    localStorage.setItem('formation', JSON.stringify(userSessionState.formation[0]));
-    localStorage.setItem('players',   JSON.stringify(userSessionState.players[0]));
+    localStorage.setItem('checklist',  JSON.stringify(userSessionState.checklist[0]));
+    localStorage.setItem('formation',  JSON.stringify(userSessionState.formation[0]));
+    localStorage.setItem('players',    JSON.stringify(userSessionState.players[0]));
+    localStorage.setItem('userName',   JSON.stringify(userSessionState.userName[0]));
+    localStorage.setItem('dbRef',      JSON.stringify(userSessionState.dbRef[0]));
+    localStorage.setItem('dataString', JSON.stringify(userSessionState.dataString[0]));
   }, [userSessionState]);
 
   return (
