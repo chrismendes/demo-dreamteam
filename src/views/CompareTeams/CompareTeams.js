@@ -32,7 +32,7 @@ const CompareTeamsView = () => {
     const fetchTeamData = async() => {
       const snapshot = await firestore.collection('teams').get();
       const rawData = snapshot.docs.map(doc => { return { ...doc.data() }; });
-console.log(rawData);
+
       const tableDataIn = [];
       const pitchDataIn = [];
 
