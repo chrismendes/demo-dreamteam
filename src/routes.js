@@ -1,24 +1,24 @@
-import PickPlayersView from './views/PickPlayers';
-import SelectTacticsView from './views/SelectTactics';
-import SaveTeamView from './views/SaveTeam';
-import CompareTeamsView from './views/CompareTeams';
+import PickPlayersPage from './pages/PickPlayers';
+import SelectTacticsPage from './pages/SelectTactics';
+import SaveTeamPage from './pages/SaveTeam';
+import CompareTeamsPage from './pages/CompareTeams';
 
 const routes = [
     {
         path: '/',
-        component: PickPlayersView
+        component: PickPlayersPage
     },
     {
         path: '/tactics',
-        component: SelectTacticsView
+        component: SelectTacticsPage
     },
     {
         path: '/save',
-        component: SaveTeamView
+        component: SaveTeamPage
     },
     {
         path: '/compare',
-        component: CompareTeamsView
+        component: CompareTeamsPage
     }
 ];
 

@@ -48,7 +48,7 @@ const CompareTeamsView = () => {
 
 
   return (
-    <div className="v-compareteams">
+    <div className="p-compareteams">
 
       <LayoutPageHeader>
         <TaskStatus tasks={appConfig.tasks} active="4" />
