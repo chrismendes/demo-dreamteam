@@ -32,7 +32,7 @@ const SelectableTable = (props) => {
   });
 
   return (
-    <div className="selectabletable">
+    <div className="selectabletable selectabletable-withscroll">
       <div className="selectabletable__cols">
         {colListItems}
       </div>

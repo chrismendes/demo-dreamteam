@@ -14,8 +14,6 @@ import ProgressBar from '../../components/common/ProgressBar';
 import SelectableTable from '../../components/common/SelectableTable';
 import Pitch from '../../components/Pitch';
 
-import './CompareTeams.scss';
-
 
 const CompareTeamsView = () => {
 
