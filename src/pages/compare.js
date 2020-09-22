@@ -15,7 +15,7 @@ import SelectableTable from '../components/common/SelectableTable';
 import Pitch from '../components/Pitch';
 
 
-const CompareTeamsView = () => {
+const CompareTeamsPage = () => {
 
   const appConfig = useContext(AppConfigContext);
 
@@ -78,4 +78,4 @@ const CompareTeamsView = () => {
   );
 };
 
-export default CompareTeamsView;
+export default CompareTeamsPage;

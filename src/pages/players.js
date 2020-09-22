@@ -12,7 +12,7 @@ import FormationSelector from '../components/FormationSelector';
 import PlayerCatalogue from '../components/PlayerCatalogue';
 
 
-const PickPlayersView = () => {
+const PickPlayersPage = () => {
 
   const appConfig = useContext(AppConfigContext);
   const userSessionState = useContext(UserSessionContext);
@@ -38,4 +38,4 @@ const PickPlayersView = () => {
   );
 };
 
-export default PickPlayersView;
+export default PickPlayersPage;

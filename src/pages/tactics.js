@@ -16,7 +16,7 @@ import Pitch from '../components/Pitch';
 import TeamSheet from '../components/TeamSheet';
 
 
-const SelectTacticsView = () => {
+const SelectTacticsPage = () => {
 
   const appConfig = useContext(AppConfigContext);
   const userSessionState = useContext(UserSessionContext);
@@ -55,4 +55,4 @@ const SelectTacticsView = () => {
   );
 };
 
-export default SelectTacticsView;
+export default SelectTacticsPage;

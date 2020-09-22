@@ -11,7 +11,7 @@ import TaskStatus from '../components/common/TaskStatus';
 import ProgressBar from '../components/common/ProgressBar';
 import SaveForm from '../components/SaveForm';
 
-const SaveTeamView = () => {
+const SaveTeamPage = () => {
 
   const appConfig = useContext(AppConfigContext);
   const userSession = useContext(UserSessionContext);
@@ -97,4 +97,4 @@ const SaveTeamView = () => {
   );
 };
 
-export default SaveTeamView;
+export default SaveTeamPage;
