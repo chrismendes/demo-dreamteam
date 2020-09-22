@@ -1,15 +1,15 @@
 import React, { useState, useContext, useEffect } from 'react';
-import { firestore, firestoreTimestamp } from '../../firebase';
+import { firestore, firestoreTimestamp } from '../firebase';
 
-import AppConfigContext from '../../contexts/AppConfigContext';
-import UserSessionContext from '../../contexts/UserSessionContext';
+import AppConfigContext from '../contexts/AppConfigContext';
+import UserSessionContext from '../contexts/UserSessionContext';
 
-import LayoutPageHeader from '../../layouts/PageHeader';
-import LayoutSection from '../../layouts/Section';
+import LayoutPageHeader from '../layouts/PageHeader';
+import LayoutSection from '../layouts/Section';
 
-import TaskStatus from '../../components/common/TaskStatus';
-import ProgressBar from '../../components/common/ProgressBar';
-import SaveForm from '../../components/SaveForm';
+import TaskStatus from '../components/common/TaskStatus';
+import ProgressBar from '../components/common/ProgressBar';
+import SaveForm from '../components/SaveForm';
 
 const SaveTeamView = () => {
 

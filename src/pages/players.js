@@ -1,15 +1,15 @@
 import React, { useContext } from 'react';
 
-import AppConfigContext from '../../contexts/AppConfigContext';
-import UserSessionContext from '../../contexts/UserSessionContext';
+import AppConfigContext from '../contexts/AppConfigContext';
+import UserSessionContext from '../contexts/UserSessionContext';
 
-import LayoutPageHeader from '../../layouts/PageHeader';
-import LayoutSection from '../../layouts/Section';
+import LayoutPageHeader from '../layouts/PageHeader';
+import LayoutSection from '../layouts/Section';
 
-import TaskStatus from '../../components/common/TaskStatus';
-import ProgressBar from '../../components/common/ProgressBar';
-import FormationSelector from '../../components/FormationSelector';
-import PlayerCatalogue from '../../components/PlayerCatalogue';
+import TaskStatus from '../components/common/TaskStatus';
+import ProgressBar from '../components/common/ProgressBar';
+import FormationSelector from '../components/FormationSelector';
+import PlayerCatalogue from '../components/PlayerCatalogue';
 
 
 const PickPlayersView = () => {

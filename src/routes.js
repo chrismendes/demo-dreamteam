@@ -1,7 +1,7 @@
-import PickPlayersPage from './pages/PickPlayers';
-import SelectTacticsPage from './pages/SelectTactics';
-import SaveTeamPage from './pages/SaveTeam';
-import CompareTeamsPage from './pages/CompareTeams';
+import PickPlayersPage from './pages/players';
+import SelectTacticsPage from './pages/tactics';
+import SaveTeamPage from './pages/save';
+import CompareTeamsPage from './pages/compare';
 
 const routes = [
     {

@@ -1,19 +1,19 @@
 import React, { useContext } from 'react';
 // import { Redirect } from 'react-router-dom';
 
-import AppConfigContext from '../../contexts/AppConfigContext';
-import UserSessionContext from '../../contexts/UserSessionContext';
+import AppConfigContext from '../contexts/AppConfigContext';
+import UserSessionContext from '../contexts/UserSessionContext';
 
-import LayoutPageHeader from '../../layouts/PageHeader';
-import LayoutSection from '../../layouts/Section';
-import LayoutTwoColumns from '../../layouts/TwoColumns';
-import LayoutTwoColumnsMain from '../../layouts/TwoColumnsMain';
-import LayoutTwoColumnsSide from '../../layouts/TwoColumnsSide';
+import LayoutPageHeader from '../layouts/PageHeader';
+import LayoutSection from '../layouts/Section';
+import LayoutTwoColumns from '../layouts/TwoColumns';
+import LayoutTwoColumnsMain from '../layouts/TwoColumnsMain';
+import LayoutTwoColumnsSide from '../layouts/TwoColumnsSide';
 
-import TaskStatus from '../../components/common/TaskStatus';
-import ProgressBar from '../../components/common/ProgressBar';
-import Pitch from '../../components/Pitch';
-import TeamSheet from '../../components/TeamSheet';
+import TaskStatus from '../components/common/TaskStatus';
+import ProgressBar from '../components/common/ProgressBar';
+import Pitch from '../components/Pitch';
+import TeamSheet from '../components/TeamSheet';
 
 
 const SelectTacticsView = () => {

@@ -1,18 +1,18 @@
 import React, { useState, useContext, useEffect } from 'react';
-import { firestore } from '../../firebase';
+import { firestore } from '../firebase';
 
-import AppConfigContext from '../../contexts/AppConfigContext';
+import AppConfigContext from '../contexts/AppConfigContext';
 
-import LayoutPageHeader from '../../layouts/PageHeader';
-import LayoutSection from '../../layouts/Section';
-import LayoutTwoColumns from '../../layouts/TwoColumns';
-import LayoutTwoColumnsMain from '../../layouts/TwoColumnsMain';
-import LayoutTwoColumnsSide from '../../layouts/TwoColumnsSide';
+import LayoutPageHeader from '../layouts/PageHeader';
+import LayoutSection from '../layouts/Section';
+import LayoutTwoColumns from '../layouts/TwoColumns';
+import LayoutTwoColumnsMain from '../layouts/TwoColumnsMain';
+import LayoutTwoColumnsSide from '../layouts/TwoColumnsSide';
 
-import TaskStatus from '../../components/common/TaskStatus';
-import ProgressBar from '../../components/common/ProgressBar';
-import SelectableTable from '../../components/common/SelectableTable';
-import Pitch from '../../components/Pitch';
+import TaskStatus from '../components/common/TaskStatus';
+import ProgressBar from '../components/common/ProgressBar';
+import SelectableTable from '../components/common/SelectableTable';
+import Pitch from '../components/Pitch';
 
 
 const CompareTeamsView = () => {
