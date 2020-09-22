@@ -52,7 +52,7 @@ const CompareTeamsView = () => {
 
       <LayoutPageHeader>
         <TaskStatus tasks={appConfig.tasks} active="4" />
-        <ProgressBar steps={appConfig.progressBarSteps} active="4" />
+        <ProgressBar steps={appConfig.progressBarSteps} active="4" done="true" />
       </LayoutPageHeader>
 
       <LayoutSection altColourFirst="true">

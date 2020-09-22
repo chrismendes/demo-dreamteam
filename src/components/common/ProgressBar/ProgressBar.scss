@@ -57,8 +57,7 @@
     color: #ffffff;
 }
 
-.progressbar > li.is-active:before,
-.progressbar > li ~ li:before {
+.progressbar > li.is-active:before {
     content: attr(number);
     font-family: inherit;
 }

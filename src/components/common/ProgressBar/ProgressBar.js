@@ -4,8 +4,10 @@ import './ProgressBar.scss';
 
 const ProgressBar = (props) => {
 
+  const markAsDone = (!!props.done);
+
   const progressBarSteps = props.steps.map((step, i) => 
-    <li className={(i+1 === parseInt(props.active)) ? 'is-active' : ''} number={i+1} key={i}><Link to={step.link}>{step.title}</Link></li>
+    <li className={(i+1 === parseInt(props.active) && !markAsDone) ? 'is-active' : ''} number={i+1} key={i}><Link to={step.link}>{step.title}</Link></li>
   );
   
   return (
