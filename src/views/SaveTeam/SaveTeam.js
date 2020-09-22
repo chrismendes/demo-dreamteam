@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect } from 'react';
-import { firestore } from '../../firebase';
+import { firestore, firestoreTimestamp } from '../../firebase';
 
 import AppConfigContext from '../../contexts/AppConfigContext';
 import UserSessionContext from '../../contexts/UserSessionContext';
@@ -10,7 +10,6 @@ import LayoutSection from '../../layouts/Section';
 import TaskStatus from '../../components/common/TaskStatus';
 import ProgressBar from '../../components/common/ProgressBar';
 import SaveForm from '../../components/SaveForm';
-
 
 const SaveTeamView = () => {
 
@@ -27,11 +26,13 @@ const SaveTeamView = () => {
   let saveData = {
     formation: {...userSession.formation[0]},
     players:   [...userSession.players[0]],
-    userName:  (userName) ? userName : null
+    userName:  (userName) ? userName : null,
+    date:      firestoreTimestamp()
   };
 
   const previousSave  = (userDatabaseRef !== null);
-  const noChanges     = (userDataString === JSON.stringify(saveData));
+  const noChanges     = (userDataString === (JSON.stringify(saveData.formation) + JSON.stringify(saveData.players)));
+
 
   useEffect(() => {
     const updatedChecklist = [...userChecklist];
@@ -43,6 +44,7 @@ const SaveTeamView = () => {
     }
     setUserChecklist(updatedChecklist);
   }, []);
+
 
   const handleSaveSuccess = () => {
     setSaveStatus(1);
@@ -56,18 +58,22 @@ const SaveTeamView = () => {
     updatedChecklist[2] = true;
     setUserChecklist(updatedChecklist);
 
-    setUserDataString(JSON.stringify(saveData));
+    setUserDataString(JSON.stringify(saveData.formation) + JSON.stringify(saveData.players));
   };
+
 
   const handleSaveError = () => {
     setSaveStatus(-1);
   };
 
+
   const saveUserTeam = (addedData) => {
     saveData = (!addedData) ? saveData : {...saveData, ...addedData};
+    saveData = {...saveData}
     let docID = (userDatabaseRef || uniqueID)
     firestore.collection('teams').doc(docID).set(saveData).then(handleSaveSuccess).catch(handleSaveError);
   };
+
 
   return (
     <React.Fragment>

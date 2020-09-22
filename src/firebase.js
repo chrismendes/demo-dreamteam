@@ -16,7 +16,5 @@ const config = {
 firebase.initializeApp(config);
 
 export const firestore = firebase.firestore();
-
-window.firebase = firebase; // (For dev/console purposes)
-
+export const firestoreTimestamp = () => { return firebase.firestore.Timestamp.fromDate(new Date()) };
 export default firebase;
