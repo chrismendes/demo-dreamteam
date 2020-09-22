@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import routes from './routes';
+import routes from './pages/_routes';
 import 'picnic/src/picnic.scss';
 import 'material-icons/iconfont/material-icons.scss';
 
