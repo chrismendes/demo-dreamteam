@@ -24,19 +24,19 @@ const tasks = [
 const progressBarSteps = [
     {
         title: 'Pick Players',
-        link:  '/'
+        // link:  '/'
     },
     {
         title: 'Select Tactics',
-        link:  '/tactics'
+        // link:  '/tactics'
     },
     {
         title: 'Save Team',
-        link:  '/save'
+        // link:  '/save'
     },
     {
         title: 'Compare Teams',
-        link:  '/compare'
+        // link:  '/compare'
     }
 ];
 

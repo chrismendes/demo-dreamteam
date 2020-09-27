@@ -16,7 +16,8 @@
     margin: 0;
 }
 
-.progressbar > li > a {
+.progressbar > li > a,
+.progressbar > li > span {
     height: 100%;
     width: 100%;
     display: block;
@@ -31,7 +32,8 @@
     user-select: none;
 }
 
-.progressbar > li.is-active > a {
+.progressbar > li.is-active > a,
+.progressbar > li.is-active > span {
     color: inherit;
 }
 
