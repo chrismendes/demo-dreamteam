@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-// import { Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
 import AppConfigContext from '../contexts/AppConfigContext';
 import UserSessionContext from '../contexts/UserSessionContext';
@@ -22,15 +22,14 @@ const SelectTacticsPage = () => {
   const userSessionState = useContext(UserSessionContext);
   const [userPlayers, setUserPlayers] = userSessionState.players;
   const [userFormation] = userSessionState.formation;
-  // const [userChecklist] = userSessionState.checklist;
   const taskCompleteCriteria = () => [...userSessionState.checklist][0][1] === true;
 
   return (
     <React.Fragment>
       
-      {/* {userChecklist[0] === false &&
+      {userSessionState.checklist[0][0] === false &&
         <Redirect to="/" />
-      } */}
+      }
 
       <LayoutPageHeader>
         <TaskStatus tasks={appConfig.tasks} active="2" completeCriteria={taskCompleteCriteria} />

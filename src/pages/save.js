@@ -1,4 +1,5 @@
 import React, { useState, useContext, useEffect } from 'react';
+import { Redirect } from 'react-router-dom';
 import { firestore, firestoreTimestamp } from '../firebase';
 
 import AppConfigContext from '../contexts/AppConfigContext';
@@ -77,6 +78,10 @@ const SaveTeamPage = () => {
 
   return (
     <React.Fragment>
+
+      {userSession.checklist[0][1] === false &&
+        <Redirect to="/" />
+      }
 
       <LayoutPageHeader>
         <TaskStatus tasks={appConfig.tasks} active="3" completeCriteria={taskCompleteCriteria} />
