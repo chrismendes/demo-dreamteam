@@ -11,10 +11,11 @@ import LayoutBody from './layouts/Body';
 
 import AppHeader from './components/common/AppHeader';
 
-import UserSession from './utils/usersession';
 import AppConfigContext from './contexts/AppConfigContext';
-import appConfig from './contexts/appConfig';
 import UserSessionContext from './contexts/UserSessionContext';
+
+import UserSession from './utils/usersession';
+import appConfig from './utils/appconfig';
 
 const App = () => {
 
