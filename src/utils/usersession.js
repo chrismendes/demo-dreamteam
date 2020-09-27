@@ -4,7 +4,7 @@ export default class UserSession {
 
   constructor() {
     this.defaults = {
-      appProgress:  [ false, false, false ],
+      checklist:    [ false, false, false ],
       players:      [],
       formation:    formations[0],
       userName:     null,
