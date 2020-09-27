@@ -18,6 +18,7 @@ const PickPlayersPage = () => {
   const userSessionState = useContext(UserSessionContext);
   const taskCompleteCriteria = () => [...userSessionState.checklist][0][0] === true;
 
+
   return (
     <React.Fragment>
 

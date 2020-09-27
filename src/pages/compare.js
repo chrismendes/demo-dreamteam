@@ -22,7 +22,6 @@ const CompareTeamsPage = () => {
   const tableCols = [ 'User Name', 'Date' ];
   const [tableData, setTableData] = useState([]);
   const [pitchData, setPitchData] = useState([]);
-  
   const [selectedTeam, setSelectedTeam] = useState(0);
  
 

@@ -16,6 +16,7 @@ const SaveTeamPage = () => {
 
   const appConfig = useContext(AppConfigContext);
   const userSession = useContext(UserSessionContext);
+
   const [saveStatus, setSaveStatus] = useState(0);
   const [userDatabaseRef, setUserDatabaseRef] = userSession.dbRef;
   const [userName, setUserName] = userSession.userName;

@@ -20,6 +20,7 @@ const SelectTacticsPage = () => {
 
   const appConfig = useContext(AppConfigContext);
   const userSessionState = useContext(UserSessionContext);
+
   const [userPlayers, setUserPlayers] = userSessionState.players;
   const [userFormation] = userSessionState.formation;
   const taskCompleteCriteria = () => [...userSessionState.checklist][0][1] === true;
