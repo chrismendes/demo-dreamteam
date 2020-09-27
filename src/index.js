@@ -11,30 +11,25 @@ import LayoutBody from './layouts/Body';
 
 import AppHeader from './components/common/AppHeader';
 
+import UserSession from './utils/usersession';
 import AppConfigContext from './contexts/AppConfigContext';
 import appConfig from './contexts/appConfig';
 import UserSessionContext from './contexts/UserSessionContext';
-import userSessionDefaults from './contexts/userSessionDefaults';
-
 
 const App = () => {
 
+  const userSession = new UserSession();
   const userSessionState = {
-    checklist:  useState(JSON.parse(localStorage.getItem('checklist')) || userSessionDefaults.appProgress),
-    formation:  useState(JSON.parse(localStorage.getItem('formation')) || userSessionDefaults.formation),
-    players:    useState(JSON.parse(localStorage.getItem('players')) || userSessionDefaults.players),
-    userName:   useState(JSON.parse(localStorage.getItem('userName')) || userSessionDefaults.userName),
-    dbRef:      useState(JSON.parse(localStorage.getItem('dbRef')) || userSessionDefaults.dbRef),
-    dataString: useState(JSON.parse(localStorage.getItem('dataString')) || userSessionDefaults.dataString)
+    checklist:  useState(userSession.getProp('checklist')),
+    formation:  useState(userSession.getProp('formation')),
+    players:    useState(userSession.getProp('players')),
+    userName:   useState(userSession.getProp('userName')),
+    dbRef:      useState(userSession.getProp('dbRef')),
+    dataString: useState(userSession.getProp('dataString'))
   };
   useEffect(() => {
-    localStorage.setItem('checklist',  JSON.stringify(userSessionState.checklist[0]));
-    localStorage.setItem('formation',  JSON.stringify(userSessionState.formation[0]));
-    localStorage.setItem('players',    JSON.stringify(userSessionState.players[0]));
-    localStorage.setItem('userName',   JSON.stringify(userSessionState.userName[0]));
-    localStorage.setItem('dbRef',      JSON.stringify(userSessionState.dbRef[0]));
-    localStorage.setItem('dataString', JSON.stringify(userSessionState.dataString[0]));
-  }, [userSessionState]);
+    userSession.updateLocalStorage(userSessionState);
+  }, [userSession, userSessionState]);
 
   return (
     <Router>
