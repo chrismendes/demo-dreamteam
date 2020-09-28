@@ -1,3 +1,47 @@
+.appheader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 20px 0;
+}
+
 .appheader > .appheader__title {
     font-size: 1.4em;
+    color: #ffffff;
+
+    padding: 0;
+}
+
+.appheader > .appheader__github {
+    color: #ffffff;
+
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+}
+.appheader > .appheader__github > img {
+    margin-right: 8px;
+}
+
+.appheader__warning {
+    display: block;
+    padding: 6px 12px;
+    margin-top: -30px;
+    align-self: flex-end;
+
+    text-align: center;
+    font-size: 0.9em;
+
+    background: #003665;
+
+    @media (max-width: 1180px) {
+        width: 100%;
+        align-self: unset;
+        margin-bottom: 20px;
+
+        font-size: 1em;
+
+        background: #bb0303;
+    }
 }
