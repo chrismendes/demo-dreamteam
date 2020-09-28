@@ -8,6 +8,7 @@ import 'material-icons/iconfont/material-icons.scss';
 
 import LayoutSiteHeader from './layouts/SiteHeader';
 import LayoutBody from './layouts/Body';
+import LayoutSiteFooter from './layouts/SiteFooter';
 
 import AppHeader from './components/common/AppHeader';
 
@@ -57,6 +58,10 @@ const App = () => {
           </UserSessionContext.Provider>
         </AppConfigContext.Provider>
       </LayoutBody>
+
+      <LayoutSiteFooter>
+        <span>Copyright &copy; 2020 Chris Mendes</span>
+      </LayoutSiteFooter>
 
     </Router>
   );
