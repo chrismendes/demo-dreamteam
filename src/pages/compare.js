@@ -23,7 +23,12 @@ const CompareTeamsPage = () => {
   const [tableData, setTableData] = useState([]);
   const [pitchData, setPitchData] = useState([]);
   const [selectedTeam, setSelectedTeam] = useState(0);
- 
+
+  const sortTeamsByDate = (a, b) => {
+    if(a.date.seconds < b.date.seconds) return 1;
+    if(a.date.seconds > b.date.seconds) return -1;
+    if(a.date.seconds === b.date.seconds) return 0;
+  };
 
   useEffect(() => {
     const fetchTeamData = async() => {
@@ -33,6 +38,8 @@ const CompareTeamsPage = () => {
       const tableDataIn = [];
       const pitchDataIn = [];
 
+      rawData.sort(sortTeamsByDate);
+      
       rawData.forEach((team) => {
         tableDataIn.push({ userName: team.userName, date: team.date });
         pitchDataIn.push({ players: team.players, formation: team.formation });
