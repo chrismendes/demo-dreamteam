@@ -7,6 +7,16 @@ const TeamSheet = () => {
   const userSessionState = useContext(UserSessionContext);
   const [userPlayers] = userSessionState.players;
 
+  
+  const sortPlayers = (a, b) => {
+    const sortOrder = { 'GK':  0, 'DEF': 1, 'MID': 2, 'FWD': 3, };
+    if(sortOrder[a.position] > sortOrder[b.position]) return 1;
+    if(sortOrder[a.position] < sortOrder[b.position]) return -1;
+    if(sortOrder[a.position] === sortOrder[b.position]) return 0;
+  };
+  userPlayers.sort(sortPlayers);
+
+
   const handlePlayerDragStart = (e, player) => {
     e.dataTransfer.setData('playerID', player.id); // (IE?) e.dataTransfer.setData('text/plain', playerID)
 
