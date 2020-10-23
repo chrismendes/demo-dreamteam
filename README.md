@@ -1,4 +1,4 @@
-# Code Exercise - JSON Forms
+# Sample Application - Football Dream Team
 
   > Pick your Premier League football dream team and submit to the database to compare with teams submitted by other users.
 
